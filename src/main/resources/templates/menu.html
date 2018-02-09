@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>menu</title>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/menu.css}"/>
+</head>
+
+<body>
+<ul id="nav-menu">
+    <li><a href="#">Overzicht</a><span class="darrow">&#9660;</span>
+        <ul class="sub1">
+            <li><a th:href="@{/albums}">Albums</a></li>
+            <li><a th:href="@{/artists}">Artiesten</a></li>
+            <li><a th:href="@{/groups}">Groepen</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Zoeken</a><span class="darrow">&#9660;</span>
+        <ul class="sub1">
+            <li><a th:href="@{/searchalbum}">Albums</a></li>
+            <li><a th:href="@{/searchatrist}">Artiesten</a></li>
+            <li><a th:href="@{/searchgroup}">Groepen</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Toevoegen</a><span class="darrow">&#9660;</span>
+        <ul class="sub1">
+            <li><a th:href="@{/addalbum}">Album</a></li>
+            <li><a th:href="@{/addatrist}">Artiest</a></li>
+            <li><a th:href="@{/addgroup}">Groep</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Wijzigen</a><span class="darrow">&#9660;</span>
+        <ul class="sub1">
+            <li><a href="#">Album</a><span class="rarrow">&#9654;</span>
+                <ul class="sub2">
+                <li><a href="#">Album van lijst</a></li>
+                    <li><a href="#">Album zoeken</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Artiest</a><span class="rarrow">&#9654;</span>
+                <ul class="sub2">
+                    <li><a href="#">Artiest van lijst</a></li>
+                    <li><a href="#">Artiest zoeken</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Groep</a><span class="rarrow">&#9654;</span>
+                <ul class="sub2">
+                    <li><a href="#">Groep van lijst</a></li>
+                    <li><a href="#">Groep zoeken</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">Verwijderen</a><span class="darrow">&#9660;</span>
+        <ul class="sub1">
+            <li><a href="#">Album</a><span class="rarrow">&#9654;</span>
+                <ul class="sub2">
+                    <li><a href="#">Album van lijst</a></li>
+                    <li><a href="#">Album zoeken</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Artiest</a><span class="rarrow">&#9654;</span>
+                <ul class="sub2">
+                    <li><a href="#">Artiest van lijst</a></li>
+                    <li><a href="#">Artiest zoeken</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Groep</a><span class="rarrow">&#9654;</span>
+                <ul class="sub2">
+                    <li><a href="#">Groep van lijst</a></li>
+                    <li><a href="#">Groep zoeken</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+</body>
+
+</html>

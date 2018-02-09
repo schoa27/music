@@ -1,0 +1,90 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    padding: 50px;
+    background-color: lightgray;
+}
+
+ul#nav-menu, ul.sub1 {
+    list-style-type: none;
+    font-size: 14px;
+}
+
+ul#nav-menu, ul.sub2 {
+    list-style-type: none;
+    font-size: 14px;
+}
+
+ul#nav-menu li {
+    width: 200px;
+    text-align: center;
+    position: relative;
+    float: left;
+    margin-right: 4px;
+}
+
+ul#nav-menu a {
+    text-decoration: none;
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    background-color: aquamarine;
+    border: 1px solid aquamarine;
+    border-radius: 5px;
+}
+
+ul#nav-menu .sub1 a {
+    margin-top: 3px;
+}
+
+ul#nav-menu .sub2 a {
+    margin-left: 5px;
+}
+
+ul#nav-menu li:hover > a {
+    background-color: antiquewhite;
+}
+
+ul#nav-menu li:hover a:hover {
+    background-color: chartreuse;
+}
+
+ul#nav-menu ul.sub1 {
+    display: none;
+    position: absolute;
+    top: 52px;
+    left: 0px;
+}
+
+ul#nav-menu li:hover .sub1 {
+    display: block;
+}
+
+ul#nav-menu .sub1 li:hover .sub2 {
+    display: block;
+}
+
+ul#nav-menu ul.sub2 {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 200px;
+}
+
+.darrow {
+    font-size: 14px;
+    position: absolute;
+    top: 17px;
+    right: 4px;
+}
+
+.rarrow {
+    font-size: 14px;
+    position: absolute;
+    top: 19px;
+    right: 4px;
+}
