@@ -23,6 +23,12 @@ public class Group {
     private List<Album> albums;
 
     @ManyToMany
+    @JoinTable(name = "gp_at",
+               joinColumns = @JoinColumn(name ="gp_id", referencedColumnName = "gp_id"),
+               inverseJoinColumns = @JoinColumn(name = "at_id", referencedColumnName = "at_id"))
+    private List<Artist> artists;
+
+    @ManyToMany
     @JoinTable(name = "gp_sg",
               joinColumns = @JoinColumn(name = "gp_id", referencedColumnName = "gp_id"),
               inverseJoinColumns = @JoinColumn(name = "sg_id", referencedColumnName = "sg_id"))

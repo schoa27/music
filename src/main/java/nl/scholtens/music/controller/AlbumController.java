@@ -66,18 +66,18 @@ public class AlbumController {
     }
 
     /**
-     * Ophalen van een Album details op id van de Album
+     * Ophalen van Album op id van de Album
      * @param item
      * @param model
      * @return
      */
-    @RequestMapping(value = "/detail/{item}", method = RequestMethod.GET)
+    @RequestMapping(value = "/detail/album/{item}", method = RequestMethod.GET)
     public ModelAndView getAllbumDetails(@PathVariable(name = "item") Integer item, ModelAndView model) {
         AlbumDTO dto = new AlbumDTO();
 
         dto.setAlbum(albumService.getAlbumById(item));
         model.addObject("dto", dto);
-        model.setViewName("details");
+        model.setViewName("albumdetails");
         return model;
     }
 

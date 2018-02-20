@@ -1,94 +1,99 @@
-create table "AM_ALBUM"
+create table am_albums
 (
-	"AM_ID" integer not null
-		constraint "PK_AM_ID"
-		primary key,
-	"AM_TITLE" char(30) not null,
-	"AM_RELEASE" date,
-	"AM_TYPE" char(10) not null,
-	"AM_COLLECTION" boolean not null,
-	"AM_SONG" integer not null,
-	"AM_ARTIST" integer,
-	"AM_GROUP" integer
+	am_id integer not null
+		constraint pk_am_id
+			primary key,
+	am_collection boolean not null,
+	am_songs integer,
+	am_type char(10),
+	am_title char(30),
+	am_group integer,
+	am_artist integer,
+	am_image char(255),
+	am_releaseyear char(4),
+	am_genre char(20)
 )
 ;
 
-create table "SG_SONGS"
+create table sg_songs
 (
-	"SG_ID" integer not null
-		constraint "PK_SG_ID"
-		primary key,
-	"SG_TITLE" char(50) not null,
-	"SG_DURATION" char(10),
-	"SG_ALBUM" integer
-		constraint "FK_SG_AM"
-		references "AM_ALBUM",
-	"SG_ARTIST" integer,
-	"SG_GROUP" integer
+	sg_id integer not null
+		constraint pk_sg_id
+			primary key,
+	sg_title char(50) not null,
+	sg_duration char(10),
+	sg_albums integer
+		constraint fk_sg_albums
+			references am_albums
 )
 ;
 
-alter table "AM_ALBUM"
-	add constraint "FK_AM_SG"
-foreign key ("AM_SONG") references "SG_SONGS"
+alter table am_albums
+	add constraint fk_am_songs
+		foreign key (am_songs) references sg_songs
 ;
 
-create table "AT_ARTISTS"
+create table gp_groups
 (
-	"AT_ID" integer not null
-		constraint "PK_AT_ID"
-		primary key,
-	"AT_NAME" char(30) not null,
-	"AT_ALBUM" integer
-		constraint "FK_AT_AM"
-		references "AM_ALBUM",
-	"AT_SONG" integer
-		constraint "FK_AT_SG"
-		references "SG_SONGS",
-	"AT_GROUP" integer
+	gp_id integer not null
+		constraint gp_group_pkey
+			primary key,
+	gp_name char(30),
+	gp_albums integer
+		constraint fk_gp_albums
+			references am_albums,
+	gp_image char
 )
 ;
 
-alter table "AM_ALBUM"
-	add constraint "FK_AM_AT"
-foreign key ("AM_ARTIST") references "AT_ARTISTS"
+alter table am_albums
+	add constraint fk_am_group
+		foreign key (am_group) references gp_groups
 ;
 
-alter table "SG_SONGS"
-	add constraint "FK_SG_AT"
-foreign key ("SG_ARTIST") references "AT_ARTISTS"
-;
-
-create table "GP_GROUPS"
+create table at_artists
 (
-	"GP_ID" integer not null
-		constraint "PK_GP_ID"
-		primary key,
-	"GP_NAME" char not null,
-	"GP_ALBUM" integer
-		constraint "FK_GP_AM"
-		references "AM_ALBUM",
-	"GP_SONG" integer
-		constraint "FK_GP_SG"
-		references "SG_SONGS",
-	"GP_ARTIST" integer not null
-		constraint "FK_GP_AT"
-		references "AT_ARTISTS"
+	at_id integer not null
+		constraint at_atrists_pkey
+			primary key,
+	at_name char(50),
+	at_albums integer
+		constraint fk_at_albums
+			references am_albums,
+	at_image char
 )
 ;
 
-alter table "AM_ALBUM"
-	add constraint "FK_AM_GP"
-foreign key ("AM_GROUP") references "GP_GROUPS"
+alter table am_albums
+	add constraint fk_am_artist
+		foreign key (am_artist) references at_artists
 ;
 
-alter table "SG_SONGS"
-	add constraint "FK_SG_GP"
-foreign key ("SG_GROUP") references "GP_GROUPS"
+create table am_sg
+(
+	am_id integer,
+	sg_id integer
+)
 ;
 
-alter table "AT_ARTISTS"
-	add constraint "FK_AT_GP"
-foreign key ("AT_GROUP") references "GP_GROUPS"
+create table at_sg
+(
+	at_id integer,
+	sg_id integer
+)
+;
+
+create table gp_sg
+(
+	gp_id integer,
+	sg_id integer
+)
+;
+
+create table gp_at
+(
+	gp_id integer,
+	at_id integer
+)
 ;
 

@@ -20,7 +20,7 @@
 
     <tr th:each="album, iterstat: ${dto.albums}" style="cursor: pointer"
         th:onmouseover="'ChangeColor(this, true);'" th:onmouseout="'ChangeColor(this, false)'"
-        th:onclick="'javascript:DetailGegevens(\'/detail/' + ${album.id} + '\');'" >
+        th:onclick="'javascript:DetailGegevens(\'/detail/album/' + ${album.id} + '\');'" >
 
         <td th:text="${album.title}" th:id="|td${iterstat.index}|"/>
         <div th:if="${album.artist != null} and ${!album.collection} ">

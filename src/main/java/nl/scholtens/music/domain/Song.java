@@ -23,6 +23,18 @@ public class Song {
     private String duration;
 
     @ManyToMany
+    @JoinTable(name = "at_sg",
+               joinColumns = @JoinColumn(name = "sg_id", referencedColumnName = "sg_id"),
+               inverseJoinColumns = @JoinColumn(name = "at_id", referencedColumnName = "at_id"))
+    private List<Artist> artists;
+
+    @ManyToMany
+    @JoinTable(name ="gp_sg",
+               joinColumns = @JoinColumn(name = "sg_id", referencedColumnName = "sg_id"),
+               inverseJoinColumns = @JoinColumn(name = "gp_id", referencedColumnName = "gp_id"))
+    private List<Group> groups;
+
+    @ManyToMany
     @JoinTable(name = "am_sg",
                joinColumns = @JoinColumn(name = "sg_id", referencedColumnName = "sg_id"),
                inverseJoinColumns = @JoinColumn(name = "am_id", referencedColumnName = "am_id"))

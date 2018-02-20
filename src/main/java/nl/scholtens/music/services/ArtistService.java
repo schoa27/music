@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface ArtistService {
 
-    List<Artist> findAllArtists();
+    List<Artist> findAllArtists(String item, boolean ascDesc);
 
     Artist findArtistByName(String name);
+
+    Artist findArtistById(Integer id);
 }

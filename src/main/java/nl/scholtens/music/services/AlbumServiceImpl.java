@@ -48,9 +48,6 @@ public class AlbumServiceImpl implements AlbumService {
     private List<Album> getsortedList(String item, boolean ascDesc) {
         return item.equals("ag")? albumDao.getAllAlbumsSortedByArtistGroep(ascDesc)
                               : albumDao.getAllSortedAlbums(item ,ascDesc);
-
-//        List<Album> sorted = albumDao.getAllSortedAlbums(item, ascDesc);
-//        return sorted;
     }
 
 }

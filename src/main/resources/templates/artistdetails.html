@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Artiistdetails</title>
+</head>
+<body>
+<h3>ArtistDetails</h3>
+<span th:text="${dto.artist.name}"></span>
+
+<br/>
+
+<div th:if="${!dto.artist.groups.empty}">
+    <table>
+        <tbody>
+        <th>Lid van groep</th>
+        <tr th:each="group, iterstat: ${dto.artist.groups}">
+            <td th:text="${group.name}"/>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
