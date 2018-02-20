@@ -21,19 +21,19 @@ public class ArtistController {
     public ModelAndView getAllArtists(ModelAndView model) {
         List<Artist> artists = artistService.findAllArtists();
         model.addObject(artists);
-        model.setViewName("albumlist");
+        model.setViewName("dummy");
         return model;
     }
 
     @RequestMapping(value = "/searchatrist", method = RequestMethod.GET)
     public ModelAndView searchArtists(ModelAndView model) {
-        model.setViewName("albumlist");
+        model.setViewName("dummy");
         return model;
     }
 
     @RequestMapping(value = "/addartist", method = RequestMethod.GET)
     public ModelAndView addArtist(ModelAndView model) {
-        model.setViewName("albumlist");
+        model.setViewName("dummy");
         return model;
     }
 }

@@ -1,5 +1,6 @@
 package nl.scholtens.music.services;
 
+import nl.scholtens.music.dataInteraction.AlbumDao;
 import nl.scholtens.music.dataInteraction.AlbumRepository;
 import nl.scholtens.music.domain.Album;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,17 +15,42 @@ public class AlbumServiceImpl implements AlbumService {
     @Autowired
     private AlbumRepository repository;
 
-    @Override
-    public List<Album> getAllAlbums() {
-        List<Album> albums = new ArrayList<>();
-        Iterable<Album> all = repository.findAll();
-        all.forEach(albums::add);
+    @Autowired
+    private AlbumDao albumDao;
 
+    @Override
+    public long countAlbums() {
+        return repository.count();
+    }
+
+    @Override
+    public List<Album> getAllAlbums(String sorting, boolean ascDesc) {
+        List<Album> albums = new ArrayList<>();
+        if (sorting.isEmpty()) {
+            Iterable<Album> all = repository.findAll();
+            all.forEach(albums::add);
+        } else {
+            return getsortedList(sorting, ascDesc);
+        }
         return albums;
+    }
+
+    @Override
+    public Album getAlbumById(Integer id) {
+        return repository.findById(id);
     }
 
     @Override
     public Album getAlbumByName(String name) {
         return repository.findByTitle(name);
     }
+
+    private List<Album> getsortedList(String item, boolean ascDesc) {
+        return item.equals("ag")? albumDao.getAllAlbumsSortedByArtistGroep(ascDesc)
+                              : albumDao.getAllSortedAlbums(item ,ascDesc);
+
+//        List<Album> sorted = albumDao.getAllSortedAlbums(item, ascDesc);
+//        return sorted;
+    }
+
 }

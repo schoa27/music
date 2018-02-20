@@ -20,7 +20,7 @@ public class SongsController {
     @RequestMapping(value = "/songs", method = RequestMethod.GET)
     public ModelAndView getAllSongs(ModelAndView model)  {
         List<Song> songs = songService.findAllSongs();
-        model.setViewName("albumlist");
+        model.setViewName("dummy");
         return model;
     }
 }

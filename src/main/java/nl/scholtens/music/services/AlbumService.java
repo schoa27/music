@@ -6,7 +6,11 @@ import java.util.List;
 
 public interface AlbumService {
 
-    List<Album> getAllAlbums();
+    long countAlbums();
+
+    List<Album> getAllAlbums(String sorting, boolean ascDesc);
+
+    Album getAlbumById(Integer id);
 
     Album getAlbumByName(String name);
 }

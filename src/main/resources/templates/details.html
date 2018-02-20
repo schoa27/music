@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Detials</title>
+</head>
+<body>
+<h3>Detials</h3>
+<span th:text="${dto.album.title}"/>
+<div th:if="${dto.album.artist != null}">
+    <span th:text="${dto.album.artist.name}"/>
+</div>
+<div th:if="${dto.album.group != null}">
+    <span th:text="${dto.album.group.name}"/>
+</div>
+<span th:text="${dto.album.releaseYear}"/>
+<span th:text="${dto.album.genre}"/>
+
+<div th:if="${!dto.album.songs.empty}">
+    <table>
+        <tbody>
+        <tr>
+            <th>Tietel</th>
+            <th>duur</th>
+        </tr>
+        <tr th:each="song, iterstat: ${dto.album.songs} ">
+            <td th:text="${song.title}"/>
+            <td th:text="${song.duration}"/>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

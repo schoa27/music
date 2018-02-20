@@ -8,6 +8,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+
+    <scm>
+        <developerConnection>scm:git:ssh://discovery:22/data/git/repositories/music
+        </developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <name>MyMusic</name>
     <description>Spring Boot project Music Collection</description>
 
@@ -90,6 +97,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!--<dependency>-->
+            <!--<groupId>info.cukes</groupId>-->
+            <!--<artifactId>gherkin</artifactId>-->
+            <!--<version>2.12.2</version>-->
+        <!--</dependency>-->
+
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium</artifactId>
@@ -120,6 +134,13 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
     </build>
 
 

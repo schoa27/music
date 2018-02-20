@@ -20,20 +20,20 @@ public class GroupsController {
     public ModelAndView getAllGroups(ModelAndView model) {
         List<Group> groups = groupService.getAllGroups();
 
-        model.setViewName("albumlist");
+        model.setViewName("dummy");
         return model;
     }
 
 
     @RequestMapping(value = "/searchgroup", method = RequestMethod.GET)
     public ModelAndView searchGroups(ModelAndView model) {
-        model.setViewName("albumlist");
+        model.setViewName("dummy");
         return model;
     }
 
     @RequestMapping(value = "/addgroup", method = RequestMethod.GET)
     public ModelAndView addGroup(ModelAndView model) {
-        model.setViewName("albumlist");
+        model.setViewName("dummy");
         return model;
     }
 }

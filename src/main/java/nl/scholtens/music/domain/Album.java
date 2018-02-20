@@ -18,12 +18,17 @@ public class Album {
     @Column(name = "am_title")
     private String title;
 
-    @Column(name = "am_release")
-    @Temporal(TemporalType.DATE)
-    private Date releaseDate;
+    @Column(name = "am_releaseyear", length = 4)
+    private String releaseYear;
+
+    @Column(name = "am_genre")
+    private String genre;
 
     @Column(name = "am_type")
     private String mediaType;
+
+    @Column(name = "am_image")
+    private String image;
 
     @Column(name = "am_collection")
     private boolean collection;
@@ -45,8 +50,10 @@ public class Album {
         return "Album{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", releaseDate=" + releaseDate +
+                ", releaseYear='" + releaseYear + '\'' +
+                ", genre='" + genre + '\'' +
                 ", mediaType='" + mediaType + '\'' +
+                ", image='" + image + '\'' +
                 ", collection=" + collection +
                 ", songs=" + songs +
                 ", group=" + group +
