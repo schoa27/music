@@ -33,6 +33,11 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
+    public List<Group> findGroupsByName(String name) {
+        return repository.findGroupByNameContains(name);
+    }
+
+    @Override
     public Group getGroupById(Integer id) {
         return repository.findById(id);
     }

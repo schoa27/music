@@ -6,6 +6,7 @@ import nl.scholtens.music.domain.Group;
 import nl.scholtens.music.services.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -67,7 +68,18 @@ public class GroupsController {
 
     @RequestMapping(value = "/searchgroup", method = RequestMethod.GET)
     public ModelAndView searchGroups(ModelAndView model) {
-        model.setViewName("dummy");
+        GroupDTO dto = new GroupDTO();
+        model.addObject("object", "group");
+        model.addObject("dto", dto);
+        model.setViewName("search");
+        return model;
+    }
+
+    @RequestMapping(value = "/search/group", method = RequestMethod.POST)
+    public ModelAndView getSearchedGroups(@ModelAttribute GroupDTO dto, ModelAndView model) {
+        dto.setGroups(groupService.findGroupsByName(dto.getSearch()));
+        model.addObject("dto", dto);
+        model.setViewName("grouplist");
         return model;
     }
 

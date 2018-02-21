@@ -11,4 +11,6 @@ public class GroupDTO {
     private List<Group> groups;
 
     private Group group;
+
+    private String search;
 }

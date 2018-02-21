@@ -18,15 +18,25 @@
     </form>
 </div>
 
-
 <div th:if="${object} == artist">
-    <h3>Album Zoeken</h3>
+    <h3>Artiest Zoeken</h3>
     <form th:action="@{/search/artist}" th:object="${dto}" th:method="post">
-        <span>Geef naam of een deel van naam van het Artist</span>
+        <span>Geef naam of een deel van naam van de Artiest</span>
         <br/>
         <input th:id="search-artist-input" th:type="text" th:size="30" th:field="*{search}"/>
         <input th:id="search-artist-submit" th:type="submit" th:value="zoek"/>
         <input th:id="search-artist-reset" th:type="reset" th:value="reset"/>
+    </form>
+</div>
+
+<div th:if="${object} == group">
+    <h3>Groep Zoeken</h3>
+    <form th:action="@{/search/group}" th:object="${dto}" th:method="post">
+        <span>Geef naam of een deel van naam van de Groep</span>
+        <br/>
+        <input th:id="search-group-input" th:type="text" th:size="30" th:field="*{search}"/>
+        <input th:id="search-group-submit" th:type="submit" th:value="zoek"/>
+        <input th:id="search-group-reset" th:type="reset" th:value="reset"/>
     </form>
 </div>
 

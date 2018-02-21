@@ -9,5 +9,7 @@ public interface GroupService {
 
     List<Group> getAllGroups(String item, boolean ascDesc);
 
+    List<Group> findGroupsByName(String name);
+
     Group getGroupById(Integer id);
 }
