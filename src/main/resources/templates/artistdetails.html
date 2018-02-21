@@ -2,10 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Artiistdetails</title>
+    <title>Artiestdetails</title>
 </head>
+
+<script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
+
 <body>
-<h3>ArtistDetails</h3>
+<h3>ArtiestDetails</h3>
 <span th:text="${dto.artist.name}"></span>
 
 <br/>
@@ -14,7 +17,10 @@
     <table>
         <tbody>
         <th>Lid van groep</th>
-        <tr th:each="group, iterstat: ${dto.artist.groups}">
+        <tr th:each="group, iterstat: ${dto.artist.groups}" style="cursor: pointer"
+            th:onmouseover="'ChangeColor(this, true);'" th:onmouseout="'ChangeColor(this, false)'"
+            th:onclick="'javascript:DetailGegevens(\'/detail/group/' + ${group.id} + '\');'" >
+
             <td th:text="${group.name}"/>
         </tr>
         </tbody>

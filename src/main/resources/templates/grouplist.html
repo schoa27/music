@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Grouplist</title>
+</head>
+
+<script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
+
+<body>
+<table>
+    <tbody>
+    <tr>
+        <th><a th:href="@{/groups/name}">Naam</a></th>
+    </tr>
+    <tr th:each="group, iterate: ${dto.groups}" style="cursor: pointer"
+        th:onmouseover="'ChangeColor(this, true);'" th:onmouseout="'ChangeColor(this, false)'"
+        th:onclick="'javascript:DetailGegevens(\'/detail/group/' + ${group.id} + '\');'" >
+        <td th:text="${group.name}"/>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

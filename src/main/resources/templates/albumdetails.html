@@ -4,14 +4,23 @@
     <meta charset="UTF-8"/>
     <title>Albumdetails</title>
 </head>
+
+<script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
+
 <body>
 <h3>AlbumDetails</h3>
 <span th:text="${dto.album.title}"/>
 <div th:if="${dto.album.artist != null}">
-    <span th:text="${dto.album.artist.name}"/>
+    <div th:onclick="'javascript:DetailGegevens(\'/detail/artist/' + ${dto.album.artist.id} + '\');'"
+         style="cursor: pointer">
+        <span th:text="${dto.album.artist.name}"/>
+    </div>
 </div>
 <div th:if="${dto.album.group != null}">
-    <span th:text="${dto.album.group.name}"/>
+    <div th:onclick="'javascript:DetailGegevens(\'/detail/group/' + ${dto.album.group.id} + '\');'"
+         style="cursor: pointer">
+        <span th:text="${dto.album.group.name}"/>
+    </div>
 </div>
 <span th:text="${dto.album.releaseYear}"/>
 <span th:text="${dto.album.genre}"/>

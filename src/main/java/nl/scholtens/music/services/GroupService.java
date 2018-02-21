@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface GroupService {
 
-    List<Group> getAllGroups();
+    List<Group> getAllGroups(String item, boolean ascDesc);
+
+    Group getGroupById(Integer id);
 }

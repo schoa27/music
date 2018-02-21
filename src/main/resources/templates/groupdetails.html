@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Groupdetails</title>
+</head>
+
+<script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
+
+<body>
+<h3>GroepDetails</h3>
+<span th:text="${dto.group.name}"></span>
+
+<br/>
+
+<div th:if="${!dto.group.artists.empty}">
+    <table>
+        <tbody>
+        <th>Leden van de groep</th>
+        <tr th:each="artist, iterstat: ${dto.group.artists}" style="cursor: pointer"
+            th:onmouseover="'ChangeColor(this, true);'" th:onmouseout="'ChangeColor(this, false)'"
+            th:onclick="'javascript:DetailGegevens(\'/detail/artist/' + ${artist.id} + '\');'" >
+            <td th:text="${artist.name}"/>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
