@@ -1,3 +1,43 @@
+create sequence seq_at
+  increment 1
+  start 10
+  minvalue
+;
+
+alter sequence muisc.seq_at
+  owner to muisc
+;
+
+create sequence seq_gp
+  increment 1
+  start 10
+  minvalue
+;
+
+alter sequence muisc.seq_gp
+  owner to muisc
+;
+
+create sequence seq_am
+  increment 1
+  start 10
+  minvalue
+;
+
+alter sequence muisc.seq_am
+  owner to muisc
+;
+
+create sequence seq_sg
+  increment 1
+  start 20
+  minvalue
+;
+
+alter sequence muisc.seq_sg
+  owner to muisc
+;
+
 create table am_albums
 (
 	am_id integer not null
@@ -60,7 +100,7 @@ create table at_artists
 	at_albums integer
 		constraint fk_at_albums
 			references am_albums,
-	at_image char
+	at_image varchar
 )
 ;
 

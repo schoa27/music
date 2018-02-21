@@ -84,11 +84,20 @@ public class GroupsController {
     }
 
     @RequestMapping(value = "/addgroup", method = RequestMethod.GET)
-    public ModelAndView addGroup(ModelAndView model) {
-        model.setViewName("dummy");
+    public ModelAndView addArtistInput(ModelAndView model) {
+        GroupDTO dto = new GroupDTO();
+        model.addObject("dto", dto);
+        model.setViewName("addgroup");
         return model;
     }
 
+    @RequestMapping(value = "/group/add", method = RequestMethod.POST)
+    public ModelAndView addArtist(@ModelAttribute GroupDTO dto, ModelAndView model) {
+        groupService.saveGroup(dto.getGroup());
+        model.setViewName("dummy");
+        return model;
+    }
+    
     private void initHttpSession(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.setAttribute("name", true);

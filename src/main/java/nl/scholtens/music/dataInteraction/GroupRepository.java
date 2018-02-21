@@ -14,4 +14,6 @@ public interface GroupRepository extends CrudRepository<Group, Integer> {
     List<Group> findGroupByNameContains(String name);
 
     Group findById(Integer id);
+
+    Group save(Group group);
 }

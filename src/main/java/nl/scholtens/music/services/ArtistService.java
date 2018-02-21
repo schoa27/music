@@ -13,4 +13,6 @@ public interface ArtistService {
     Artist findArtistByName(String name);
 
     Artist findArtistById(Integer id);
+
+    Artist saveArtist(Artist artist);
 }

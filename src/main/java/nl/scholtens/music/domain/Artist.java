@@ -11,6 +11,8 @@ import java.util.List;
 public class Artist {
 
     @Id
+    @SequenceGenerator(name = "seq_artist", sequenceName = "seq_at", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_artist")
     @Column(name = "at_id")
     private int id;
 

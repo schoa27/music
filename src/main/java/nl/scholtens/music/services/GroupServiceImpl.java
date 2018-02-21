@@ -41,6 +41,12 @@ public class GroupServiceImpl implements GroupService {
     public Group getGroupById(Integer id) {
         return repository.findById(id);
     }
+
+    @Override
+    public Group saveGroup(Group group) {
+        return repository.save(group);
+    }
+
     private List<Group> getsortedList(String sorting, boolean ascDesc) {
         return groupDao.getAllSortedGroups(sorting, ascDesc);
     }

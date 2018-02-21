@@ -15,6 +15,8 @@ public interface ArtistRepository extends CrudRepository<Artist, Integer> {
     Artist findByName(String name);
 
     Artist findArtistById(Integer id);
+
+    Artist save(Artist artist);
 }
 
 

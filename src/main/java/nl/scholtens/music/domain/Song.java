@@ -13,6 +13,8 @@ import java.util.List;
 public class Song {
 
     @Id
+    @SequenceGenerator(name = "seq_song", sequenceName = "seq_sg", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_song")
     @Column(name = "sg_id")
     private int id;
 

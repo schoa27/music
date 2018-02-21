@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>AddAritst </title>
+</head>
+<body>
+
+<form th:action="@{/artist/add}" th:method="post" th:object="${dto}">
+    <H3>Toevoegen Artiest</H3>
+
+    <span>gegevens Artiest</span>
+    <br/>
+    <input th:id="input-artist-name" th:type="text" th:size="30" th:maxlength="50" th:field="*{artist.name}"/>
+    <br/>
+    <input th:id="input-artist-image" th:type="text" th:size="30" th:maxlength="255" th:field="*{artist.image}"/>
+    <br/>
+    <input th:id="add-artist-submit" th:type="submit" th:value="Opslaan"/>
+    <input th:id="add-artist-reset" th:type="reset" th:value="Reset"/>
+
+</form>
+
+</body>
+</html>

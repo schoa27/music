@@ -48,6 +48,11 @@ public class ArtistServiceImpl implements ArtistService {
         return repository.findArtistById(id);
     }
 
+    @Override
+    public Artist saveArtist(Artist artist) {
+        return repository.save(artist);
+    }
+
     private List<Artist> getsortedList(String item, boolean ascDesc) {
        return artistDao.getAllSortedArtist(item, ascDesc);
     }

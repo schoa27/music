@@ -12,6 +12,8 @@ import java.util.List;
 public class Album {
 
     @Id
+    @SequenceGenerator(name = "seq_album", sequenceName = "seq_am", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_album")
     @Column(name = "am_id")
     private int id;
 

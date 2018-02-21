@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>AddGroup </title>
+</head>
+<body>
+
+<form th:action="@{/group/add}" th:method="post" th:object="${dto}">
+    <H3>Toevoegen Groep</H3>
+
+    <span>gegevens Groep</span>
+    <br/>
+    <input th:id="input-group-name" th:type="text" th:size="30" th:maxlength="50" th:field="*{group.name}"/>
+    <br/>
+    <input th:id="input-group-image" th:type="text" th:size="30" th:maxlength="255" th:field="*{group.image}"/>
+    <br/>
+    <input th:id="add-group-submit" th:type="submit" th:value="Opslaan"/>
+    <input th:id="add-group-reset" th:type="reset" th:value="Reset"/>
+
+</form>
+
+</body>
+</html>
