@@ -5,6 +5,7 @@ import nl.scholtens.music.domain.Artist;
 import nl.scholtens.music.services.ArtistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,13 +24,13 @@ public class ArtistController {
 
     /**
      * Ophalen van alle Artiesten.
+     *
      * @param model
      * @return
      */
     @RequestMapping(value = "/artists", method = RequestMethod.GET)
     public ModelAndView getAllArtists(HttpServletRequest request, ModelAndView model) {
         ArtistDTO dto = new ArtistDTO();
-        initHttpSession(request);
 
         dto.setArtists(artistService.findAllArtists("", false));
         model.addObject("dto", dto);
@@ -56,12 +57,12 @@ public class ArtistController {
         dto.setArtists(artistService.findAllArtists(item, ascDesc));
         model.addObject("dto", dto);
         model.setViewName("artistlist");
-
         return model;
     }
 
     /**
      * Opahlen van Artist op id.
+     *
      * @param id
      * @param model
      * @return
@@ -75,9 +76,31 @@ public class ArtistController {
         return model;
     }
 
-    @RequestMapping(value = "/searchatrist", method = RequestMethod.GET)
+    /**
+     * Opbouw van het zoekscherm
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/searchartist", method = RequestMethod.GET)
     public ModelAndView searchArtists(ModelAndView model) {
-        model.setViewName("dummy");
+        ArtistDTO dto = new ArtistDTO();
+        model.addObject("object", "artist");
+        model.addObject("dto", dto);
+        model.setViewName("search");
+        return model;
+    }
+
+    /**
+     * Artist zoeken die voldoen aan de zoekcriteria
+     * @param dto
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/search/artist", method = RequestMethod.POST)
+    public ModelAndView getSearchedArtists(@ModelAttribute ArtistDTO dto, ModelAndView model) {
+        dto.setArtists(artistService.findArtistsByName(dto.getSearch()));
+        model.addObject("dto", dto);
+        model.setViewName("artistlist");
         return model;
     }
 
@@ -85,10 +108,5 @@ public class ArtistController {
     public ModelAndView addArtist(ModelAndView model) {
         model.setViewName("dummy");
         return model;
-    }
-
-    private void initHttpSession(HttpServletRequest request) {
-        HttpSession session = request.getSession();
-        session.setAttribute("name", true);
     }
 }

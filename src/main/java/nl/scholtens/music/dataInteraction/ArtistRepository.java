@@ -9,6 +9,9 @@ import java.util.List;
 @Repository
 public interface ArtistRepository extends CrudRepository<Artist, Integer> {
 
+
+    List<Artist> findAristsByNameContains(String name);
+
     Artist findByName(String name);
 
     Artist findArtistById(Integer id);

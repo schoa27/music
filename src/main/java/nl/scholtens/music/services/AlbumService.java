@@ -12,5 +12,5 @@ public interface AlbumService {
 
     Album getAlbumById(Integer id);
 
-    Album getAlbumByName(String name);
+    List<Album> getAlbumsByName(String name);
 }

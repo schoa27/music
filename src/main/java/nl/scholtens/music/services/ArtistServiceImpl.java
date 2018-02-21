@@ -32,6 +32,12 @@ public class ArtistServiceImpl implements ArtistService {
     }
 
     @Override
+    public List<Artist> findArtistsByName(String name) {
+        return repository.findAristsByNameContains(name);
+    }
+
+
+    @Override
     public Artist findArtistByName(String name) {
         Artist byName = repository.findByName(name);
         return byName;

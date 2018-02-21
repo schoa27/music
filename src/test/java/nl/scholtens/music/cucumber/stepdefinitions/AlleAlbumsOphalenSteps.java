@@ -29,7 +29,7 @@ public class AlleAlbumsOphalenSteps extends MusicFeatureTest {
 
     @When("^Naam filter met \"([^\"]*)\" is ingevuld$")
     public void naamFilterMetIsIngevuld(String arg1) throws Throwable {
-        Album name = service.getAlbumByName("name");
+//        Album name = service.getAlbumsByName("name");
     }
 
     @When("^Tietel filter met \"([^\"]*)\" is ingevuld$")

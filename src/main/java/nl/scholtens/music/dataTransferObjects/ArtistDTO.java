@@ -11,4 +11,6 @@ public class ArtistDTO {
     private List<Artist>  artists;
 
     private Artist artist;
+
+    private String search;
 }

@@ -41,8 +41,8 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     @Override
-    public Album getAlbumByName(String name) {
-        return repository.findByTitle(name);
+    public List<Album> getAlbumsByName(String name) {
+        return repository.findAlbumsByTitleContains(name);
     }
 
     private List<Album> getsortedList(String item, boolean ascDesc) {

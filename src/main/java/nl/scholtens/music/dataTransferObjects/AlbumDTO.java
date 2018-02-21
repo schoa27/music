@@ -13,4 +13,6 @@ public class AlbumDTO {
     private List<Album> albums;
 
     private Album album;
+
+    private String search;
 }
