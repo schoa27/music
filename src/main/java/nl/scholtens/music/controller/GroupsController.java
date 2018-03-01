@@ -60,7 +60,7 @@ public class GroupsController {
     @RequestMapping(value = "/detail/group/{item}", method = RequestMethod.GET)
     public ModelAndView getGroupDetail(@PathVariable(name = "item") Integer id, ModelAndView model) {
         GroupDTO dto = new GroupDTO();
-        dto.setGroup(groupService.getGroupById(id));
+        dto.setGroup(groupService.findGroupById(id));
         model.addObject("dto", dto);
         model.setViewName("groupdetails");
         return model;

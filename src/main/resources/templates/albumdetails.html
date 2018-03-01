@@ -25,16 +25,29 @@
 <span th:text="${dto.album.releaseYear}"/>
 <span th:text="${dto.album.genre}"/>
 
-<div th:if="${!dto.album.songs.empty}">
+<div th:if="${!dto.disks.empty}">
     <table>
         <tbody>
         <tr>
-            <th>Tietel</th>
-            <th>duur</th>
+            <th>Disc</th>
         </tr>
-        <tr th:each="song, iterstat: ${dto.album.songs} ">
-            <td th:text="${song.title}"/>
-            <td th:text="${song.duration}"/>
+        <tr th:each="disk: ${dto.disks} ">
+            <td th:text="${disk.diskNumber}"/>
+            <div th:if="${!disk.songs.empty}">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Nummer</th>
+                        <th>duur</th>
+                    </tr>
+                    <tr th:each="song: ${disk.songs}">
+                        <td th:text="${song.title}"/>
+                        <td th:text="${song.duration}"/>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
         </tr>
         </tbody>
     </table>

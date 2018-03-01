@@ -11,7 +11,7 @@ public interface GroupService {
 
     List<Group> findGroupsByName(String name);
 
-    Group getGroupById(Integer id);
+    Group findGroupById(Integer id);
 
     Group saveGroup(Group group);
 }

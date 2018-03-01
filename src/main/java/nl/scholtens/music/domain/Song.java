@@ -24,6 +24,9 @@ public class Song {
     @Column(name = "sg_duration")
     private String duration;
 
+    @Column(name = "sg_disc")
+    private Integer discnr;
+
     @ManyToMany
     @JoinTable(name = "at_sg",
                joinColumns = @JoinColumn(name = "sg_id", referencedColumnName = "sg_id"),

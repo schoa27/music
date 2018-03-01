@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>AddSongToAlbum</title>
+</head>
+
+<script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
+
+<body>
+<H3>Songs toevoegen</H3>
+
+
+
+<br/>
+<form th:action="@{/album/addsongs}" th:method="post" th:object="${dto}">
+    <input th:type="text" th:size="30" th:maxlength="50" th:field="*{song.title}"/>
+    <input th:type="text" th:size="6" th:maxlength="8" th:field="*{song.duration}"/>
+
+    <br/>
+    <input th:type="submit" th:value="Opslaan"/>
+</form>
+
+</body>
+</html>

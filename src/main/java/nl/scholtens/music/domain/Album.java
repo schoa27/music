@@ -1,10 +1,12 @@
 package nl.scholtens.music.domain;
 
+import com.google.common.collect.Multimap;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 @Table(name = "am_albums")

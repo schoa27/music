@@ -38,7 +38,7 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public Group getGroupById(Integer id) {
+    public Group findGroupById(Integer id) {
         return repository.findById(id);
     }
 
