@@ -2,47 +2,20 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.11.0.js'></script>
+    <link rel="stylesheet" type="text/css"
+          href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.css"/>
+    <script type='text/javascript'
+            src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
     <title>AddAlbum</title>
 </head>
 
 <script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
 
 <body>
-<form th:action="@{/album/add}" th:method="post" th:object="${dto}">
-    <H3>Toevoegen Album</H3>
+<form th:action="@{/album/add}" th:method="post" th:object="${dto}" th:id="songListForm">
 
-    <span>gegevens Album</span>
-    <br/>
-
-    <span>Album tietel </span>
-    <input th:id="input-album-name" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.title}"/>
-    <br/>
-
-    <span>Release jaar </span>
-    <input th:id="input-releaseYear" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.releaseYear}"/>
-    <br/>
-
-    <span>Genre</span>
-    <input th:id="input-genre" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.genre}"/>
-    <br/>
-
-    <span>Media type</span>
-    <input th:id="input-mediatype" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.mediaType}"/>
-    <br/>
-
-    <span>Aantal muziek dragers</span>
-    <input th:id="input-mediatype" th:type="text" th:size="1" th:maxlength="1" th:field="*{totaldiscs}"/>
-    <br/>
-
-    <span>Pad afbeelding</span>
-    <input th:id="input-album-image" th:type="text" th:size="30" th:maxlength="255" th:field="*{album.image}"/>
-    <br/>
-
-    <span>Verzamelalbum</span>
-    <input th:type="radio" th:field="*{album.collection}" onclick="javascript:showhideButton('button','');"
-           value="false">Nee</input>
-    <input th:type="radio" th:field="*{album.collection}" onclick="javascript:showhideButton('','button');"
-           value="true">Ja</input>
+    <div th:include="fragments/albumhead"/>
 
     <div style="display: block" th:id="button">
         <input th:type="button" onclick="javascript:showhide('group' ,'artist');" value="Artiest/Groep"/>
@@ -61,15 +34,60 @@
                 <option th:each="artist : ${dto.artists}" th:value="${artist.id}" th:text="${artist.name}"></option>
             </select>
         </div>
-    </div>
 
+    </div>
     <br/>
 
+    <fieldset>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                <th>title</th>
+                <th>duration</th>
+                <th>disk</th>
+                <th>&nbsp;</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="text" value="" maxlength="50" size="50" name="title"/>
+                    </td>
+                    <td><input type="text" value="" maxlength="5" size="5" name="duration"/>
+                    </td>
+                    <td><input type="text" value="" maxlength="2" size="2" name="disk"/>
+                    </td>
+                    <td><a href="#" class="remove-row"><span class="glyphicon glyphicon-minus"></span></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div><a href="#" id="add-row"><span class="glyphicon glyphicon-plus"></span>Add Song</a></div>
 
+        <div id="text"></div>
+    </fieldset>
+
+    <br/>
     <input th:id="add-artist-submit" th:type="submit" th:value="Verder"/>
     <input th:id="add-artist-reset" th:type="reset" th:value="Reset"/>
 
+
 </form>
+<script>
+
+    $('#add-row').on('click', function (e) {
+        e.preventDefault();
+        var tableBody = $('.table > tbody'),
+            lastRowClone = $('tr:last-child', tableBody).clone();
+        $('input[type=text]', lastRowClone).val('');
+        tableBody.append(lastRowClone);
+    });
+
+    $('.table').on('click', '.remove-row', function (e) {
+        e.preventDefault();
+        var row = $(this).parent().parent();
+        row.remove();
+    })
+
+</script>
 
 
 </body>

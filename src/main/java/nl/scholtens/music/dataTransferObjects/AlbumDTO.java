@@ -3,6 +3,7 @@ package nl.scholtens.music.dataTransferObjects;
 import lombok.Data;
 import nl.scholtens.music.domain.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data

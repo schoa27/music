@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Album</title>
+</head>
+<body>
+
+<div th:fragment="albumhead">
+    <H3>Toevoegen Album</H3>
+
+    <span>gegevens Album</span>
+    <br/>
+
+    <span>Album tietel </span>
+    <input th:id="input-album-name" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.title}"/>
+    <br/>
+
+    <span>Release jaar </span>
+    <input th:id="input-releaseYear" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.releaseYear}"/>
+    <br/>
+
+    <span>Genre</span>
+    <input th:id="input-genre" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.genre}"/>
+    <br/>
+
+    <span>Media type</span>
+    <input th:id="input-mediatype" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.mediaType}"/>
+    <br/>
+
+    <span>Aantal muziek dragers</span>
+    <input th:id="input-mediatype" th:type="text" th:size="1" th:maxlength="1" th:field="*{totaldiscs}"/>
+    <br/>
+
+    <span>Pad afbeelding</span>
+    <input th:id="input-album-image" th:type="text" th:size="30" th:maxlength="255" th:field="*{album.image}"/>
+    <br/>
+
+</div>
+</body>
+</html>

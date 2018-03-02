@@ -16,11 +16,13 @@ function showhideButton(id1, id2) {
 
     if (a1 != null && a1.style.display == 'none') {
         a1.style.display = 'block'
-    };
+    }
+    ;
 
     if (a2 != null && a2.style.display == 'block') {
-            a2.style.display = 'none'
-    };
+        a2.style.display = 'none'
+    }
+    ;
 }
 
 function showhide(id1, id2) {
@@ -35,5 +37,22 @@ function showhide(id1, id2) {
         e2.style.display = 'none'
     }
     ;
+}
+
+function disableselection(id) {
+    var s1 = document.getElementById(id);
+
+    if (s1.value = 0 && s1 == 'artist') {
+        document.getElementById('group').disabled = false;
+        document.getElementById('artist').disabled = true;
+    } else {
+        document.getElementById('artist').disabled = false;
+        document.getElementById('group').disabled = true;
+    }
+}
+
+function enableselection() {
+    document.getElementById('group').disabled = false;
+    document.getElementById('artist').disabled = false;
 
 }

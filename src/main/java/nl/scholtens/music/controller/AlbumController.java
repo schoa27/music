@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -136,8 +137,19 @@ public class AlbumController {
         return model;
     }
 
+    @RequestMapping(value = "/addverzamelalbum", method = RequestMethod.GET)
+    public ModelAndView addVerzamelAlbum(ModelAndView model) {
+        AlbumDTO dto = new AlbumDTO();
+
+        dto.setGroups(groupService.getAllGroups("name",true));
+        dto.setArtists(artistService.findAllArtists("name", true));
+        model.addObject("dto", dto);
+        model.setViewName("addcollectionalbum");
+        return model;
+    }
+
     @RequestMapping(value = "/album/add", method = RequestMethod.POST)
-    public ModelAndView addAlbum(@ModelAttribute AlbumDTO dto, ModelAndView model) {
+    public ModelAndView addAlbum(@ModelAttribute AlbumDTO dto, ModelAndView model, HttpServletRequest request) {
         if (dto.getAlbum().getArtist().getId() > 0 ) {
             Artist artist = artistService.findArtistById(dto.getAlbum().getArtist().getId());
             dto.getAlbum().setArtist(artist);
@@ -146,6 +158,13 @@ public class AlbumController {
             Group group = groupService.findGroupById(dto.getAlbum().getGroup().getId());
             dto.getAlbum().setGroup(group);
         }
+
+
+        String[] titles = request.getParameterMap().get("title");
+        String[] duration = request.getParameterMap().get("duration");
+        String[] disks = request.getParameterMap().get("disk");
+
+        Arrays.stream(titles).forEach(s -> System.out.println(s));
 
         model.addObject("dto", dto);
         model.setViewName("addsongs");
