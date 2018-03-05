@@ -69,6 +69,32 @@ ALTER TABLE music.gp_sg
 
 --
 
+-- Table: music.sg_songs
+
+
+CREATE TABLE music.sg_songs
+(
+    sg_id integer NOT NULL,
+    sg_title character(50) COLLATE pg_catalog."default" NOT NULL,
+    sg_duration character(10) COLLATE pg_catalog."default",
+    sg_albums integer,
+    sg_disc integer NOT NULL,
+    CONSTRAINT pk_sg_id PRIMARY KEY (sg_id),
+    CONSTRAINT fk_sg_albums FOREIGN KEY (sg_albums)
+        REFERENCES music.am_albums (am_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE music.sg_songs
+    OWNER to music;
+
+
+
 -- Table: music.gp_groups
 
 CREATE TABLE music.gp_groups
@@ -115,30 +141,6 @@ TABLESPACE pg_default;
 ALTER TABLE music.at_artists
     OWNER to music;
 	
--- Table: music.gp_groups
-
-CREATE TABLE music.gp_groups
-(
-    gp_id integer NOT NULL,
-    gp_name character(30) COLLATE pg_catalog."default",
-    gp_albums integer,
-    gp_image character varying COLLATE pg_catalog."default",
-    CONSTRAINT gp_group_pkey PRIMARY KEY (gp_id),
-    CONSTRAINT fk_gp_albums FOREIGN KEY (gp_albums)
-        REFERENCES music.am_albums (am_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-)
-WITH (
-    OIDS = FALSE
-)
-TABLESPACE pg_default;
-
-ALTER TABLE music.gp_groups
-    OWNER to music;
-
-GRANT ALL ON TABLE music.gp_groups TO music;	
-
 -- Table: music.am_albums
 
 CREATE TABLE music.am_albums
