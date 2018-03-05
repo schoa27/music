@@ -1,0 +1,21 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.maintable {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    border-style: groove solid;
+    border: darkseagreen 3px;
+}
+
+.listtable {
+    text-align: center;
+    width: 100%;
+    border: darkseagreen  2px;
+    padding: 2px;
+    border-spacing: 2px;
+
+}

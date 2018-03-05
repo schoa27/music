@@ -1,8 +1,8 @@
 function ChangeColor(tableRow, highLight) {
     if (highLight) {
-        tableRow.style.backgroundColor = '#c0c0c0';//#dcfac9
+        tableRow.style.backgroundColor = '#949494'; //'donkergrijs'
     } else {
-        tableRow.style.backgroundColor = '#ffffff'; //'white';
+        tableRow.style.backgroundColor = '#D3D3D3'; //'lightgrijs';
     }
 }
 
@@ -16,13 +16,11 @@ function showhideButton(id1, id2) {
 
     if (a1 != null && a1.style.display == 'none') {
         a1.style.display = 'block'
-    }
-    ;
+    };
 
     if (a2 != null && a2.style.display == 'block') {
         a2.style.display = 'none'
-    }
-    ;
+    };
 }
 
 function showhide(id1, id2) {

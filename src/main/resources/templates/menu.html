@@ -5,8 +5,8 @@
     <title>menu</title>
     <link rel="stylesheet" text="text/css" th:href="@{/css/menu.css}"/>
 </head>
-
-<body>
+<div th:fragment="menu">
+<body th:class="menubody">
 <ul id="nav-menu">
     <li><a href="#">Overzicht</a><span class="darrow">&#9660;</span>
         <ul class="sub1">
@@ -83,5 +83,5 @@
 
 
 </body>
-
+</div>
 </html>
