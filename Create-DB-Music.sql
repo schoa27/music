@@ -1,6 +1,4 @@
--- Database: DB_MUSIC
-
--- DROP DATABASE "DB_MUSIC";
+-- Create Database: DB_MUSIC
 
 CREATE DATABASE "DB_MUSIC"
     WITH 

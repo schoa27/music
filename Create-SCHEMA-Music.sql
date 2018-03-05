@@ -1,6 +1,4 @@
--- SCHEMA: music
-
--- DROP SCHEMA music ;
+-- Create Schema: music
 
 CREATE SCHEMA music
     AUTHORIZATION music;

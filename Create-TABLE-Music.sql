@@ -1,3 +1,4 @@
+-- Create Tables, foreignkeys and set owner
 
 -- Table: music.am_sg
 CREATE TABLE music.am_sg
