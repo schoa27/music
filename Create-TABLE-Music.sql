@@ -84,7 +84,7 @@ TABLESPACE pg_default;
 CREATE TABLE music.gp_groups
 (
     gp_id integer NOT NULL,
-    gp_name character(30) COLLATE pg_catalog."default",
+    gp_name character(50) COLLATE pg_catalog."default",
     gp_albums integer,
     gp_image character varying COLLATE pg_catalog."default",
     CONSTRAINT gp_group_pkey PRIMARY KEY (gp_id)

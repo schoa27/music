@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.11.0.js'></script>
     <title>AddGroup </title>
 </head>
 <body>
@@ -11,14 +12,37 @@
 
     <span>gegevens Groep</span>
     <br/>
-    <input th:id="input-group-name" th:type="text" th:size="30" th:maxlength="50" th:field="*{group.name}"/>
+    <span>Naam groep</span>
+    <input th:id="input-group-name" th:type="text" th:size="50" th:maxlength="50" th:field="*{group.name}"/>
     <br/>
-    <input th:id="input-group-image" th:type="text" th:size="30" th:maxlength="255" th:field="*{group.image}"/>
+    <span>afbeedling</span>
+    <input th:id="input-group-image" th:type="text" th:size="50" th:maxlength="255" th:field="*{group.image}"/>
+    <br/>
+    <table class="table">
+        <thead>
+        <th>Members</th>
+        <th>&nbsp;</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <select name="artists">
+                    <option value="0">Selecteer artist</option>
+                    <option th:each="artist : ${dto.artists}" th:value="${artist.id}" th:text="${artist.name}"></option>
+                </select>
+            </td>
+            <td><a href="#" class="remove-row">Verwijderen</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <div><a href="#" id="add-row">Toevoegen</a></div>
     <br/>
     <input th:id="add-group-submit" th:type="submit" th:value="Opslaan"/>
     <input th:id="add-group-reset" th:type="reset" th:value="Reset"/>
 
 </form>
+
+<script type="text/javascript" th:src="@{/js/tableFunctions.js}"/>
 
 </body>
 </html>

@@ -167,7 +167,7 @@ public class AlbumController {
         Arrays.stream(titles).forEach(s -> System.out.println(s));
 
         model.addObject("dto", dto);
-        model.setViewName("addsongs");
+        model.setViewName("dummy");
         return model;
     }
 

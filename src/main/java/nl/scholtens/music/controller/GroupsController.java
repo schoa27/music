@@ -3,6 +3,7 @@ package nl.scholtens.music.controller;
 import nl.scholtens.music.dataTransferObjects.ArtistDTO;
 import nl.scholtens.music.dataTransferObjects.GroupDTO;
 import nl.scholtens.music.domain.Group;
+import nl.scholtens.music.services.ArtistService;
 import nl.scholtens.music.services.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,9 @@ public class GroupsController {
 
     @Autowired
     private GroupService groupService;
+
+    @Autowired
+    private ArtistService artistService;
 
     @RequestMapping(value = "/groups", method = RequestMethod.GET)
     public ModelAndView getAllGroups(HttpServletRequest request, ModelAndView model) {
@@ -86,6 +90,7 @@ public class GroupsController {
     @RequestMapping(value = "/addgroup", method = RequestMethod.GET)
     public ModelAndView addArtistInput(ModelAndView model) {
         GroupDTO dto = new GroupDTO();
+        dto.setArtists(artistService.findAllArtists("", false));
         model.addObject("dto", dto);
         model.setViewName("addgroup");
         return model;
@@ -93,7 +98,9 @@ public class GroupsController {
 
     @RequestMapping(value = "/group/add", method = RequestMethod.POST)
     public ModelAndView addArtist(@ModelAttribute GroupDTO dto, ModelAndView model) {
-        groupService.saveGroup(dto.getGroup());
+        dto.getGroup().setArtists(dto.getArtists());
+
+        Group group = groupService.saveGroup(dto.getGroup());
         model.setViewName("dummy");
         return model;
     }
