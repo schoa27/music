@@ -3,19 +3,47 @@
     padding: 0px;
 }
 
-.maintable {
+h2 {
+    font-size: xx-large;
+}
+
+.headtable {
     align-items: center;
-    text-align: center;
     width: 100%;
-    border-style: groove solid;
-    border: darkseagreen 3px;
+    border-style: none;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.maintable {
+    width: 100%;
+    border-style: none;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    border-spacing: 10px
 }
 
 .listtable {
-    text-align: center;
     width: 100%;
-    border: darkseagreen  2px;
-    padding: 2px;
-    border-spacing: 2px;
+    margin: auto;
+    border: darkseagreen 3px;
+    border-style: solid;
+    border-collapse: collapse;
+    padding: 5px;
+    border-spacing: 5px;
+}
 
+.columncenter {
+    text-align: center;
+    cursor: pointer;
+}
+
+td.row {
+    border: darkseagreen solid 3px;
+    height: 30px;
+}
+
+tr.row {
+    border: darkseagreen solid 3px;
+    height: 40px;
 }

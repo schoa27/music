@@ -1,28 +1,30 @@
 * {
     padding: 0px;
     margin: 0px;
+    font-family: Monospaced;
+    font-size: large;
 }
 .menubody {
     alignment: center;
     padding: auto;
-    width: 100%;
+    width: 1280px;
     background-color: lightgray;
 }
 
 ul#nav-menu, ul.sub1 {
     list-style-type: none;
     font-size: 14px;
-    padding: 0 0 0 10%;
+    padding: 0 0 0 17%;
 }
 
 ul#nav-menu, ul.sub2 {
     list-style-type: none;
     font-size: 14px;
-    padding: 0 0 0 10%;
+    padding: 0 0 0 17%;
 }
 
 ul#nav-menu li {
-    width: 200px;
+    width: 165px;
     text-align: center;
     position: relative;
     float: left;
@@ -32,11 +34,11 @@ ul#nav-menu li {
 ul#nav-menu a {
     text-decoration: none;
     display: block;
-    width: 200px;
+    width: 165px;
     height: 50px;
     line-height: 50px;
-    background-color: aquamarine;
-    border: 1px solid aquamarine;
+    background-color: darkseagreen;
+    border: 1px solid darkseagreen;
     border-radius: 5px;
 }
 
@@ -49,18 +51,18 @@ ul#nav-menu .sub2 a {
 }
 
 ul#nav-menu li:hover > a {
-    background-color: antiquewhite;
+    background-color: #96A470;
 }
 
 ul#nav-menu li:hover a:hover {
-    background-color: chartreuse;
+    background-color: #80b45d;
 }
 
 ul#nav-menu ul.sub1 {
     display: none;
     position: absolute;
     top: 52px;
-    left: -10%;
+    left: -17%;
 }
 
 ul#nav-menu li:hover .sub1 {
@@ -75,7 +77,7 @@ ul#nav-menu ul.sub2 {
     display: none;
     position: absolute;
     top: 0px;
-    left: 180px;
+    left: 136px;
 }
 
 .darrow {

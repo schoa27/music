@@ -10,54 +10,56 @@
 <script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
 
 <body>
-<table style="width: 100%" border="1">
+<table th:class="headtable">
     <tbody>
     <tr align="center">
         <td>
-            <h3>Mijn Muziek Overzicht</h3>
+            <h2>Mijn Muziek Overzicht</h2>
         </td>
+    </tr>
+    <tr>
+        <br/>
     </tr>
     </tbody>
 </table>
 
 <div th:include="menu"/>
 
-<table style="width: 100%" border="1">
+<table th:class="maintable">
     <tbody>
     <tr align="center">
         <td>
-            <h3>Album Overzicht</h3>
+            <h2>Album Overzicht</h2>
         </td>
     </tr>
-    <tr align="center">
+    <tr>
         <td>
-            <table width="100%" style="text-align: center; border: darkgreen; border-style: solid"
-                   cellpadding="5px" cellspacing="2px" border="2px">
+            <table th:class="listtable">
                 <tbody>
-                <tr>
+                <tr th:class="row">
                     <th><a th:href="@{/albums/title}">Album</a></th>
                     <th><a th:href="@{/albums/ag}">Uitvoeren</a></th>
                     <th><a th:href="@{/albums/releaseYear}">Release Datum</a></th>
                     <th><a th:href="@{/albums/genre}">Genre</a></th>
                 </tr>
 
-                <tr th:each="album, iterstat: ${dto.albums}" style="cursor: pointer"
+                <tr th:each="album, iterstat: ${dto.albums}" th:class="columncenter"
                     th:onmouseover="'ChangeColor(this, true);'"
                     th:onmouseout="'ChangeColor(this, false)'"
                     th:onclick="'javascript:DetailGegevens(\'/detail/album/' + ${album.id} + '\');'">
 
-                    <td th:text="${album.title}" th:id="|td${iterstat.index}|"/>
+                    <td th:class="row" th:text="${album.title}" th:id="|td${iterstat.index}|"/>
                     <div th:if="${album.artist != null} and ${!album.collection} ">
-                        <td th:text="${album.artist.name}" th:id="|td${iterstat.index}|"/>
+                        <td th:class="row" th:text="${album.artist.name}" th:id="|td${iterstat.index}|"/>
                     </div>
                     <div th:if="${album.group != null}  and ${!album.collection} ">
-                        <td th:text="${album.group.name}" th:id="|td${iterstat.index}|"/>
+                        <td th:class="row" th:text="${album.group.name}" th:id="|td${iterstat.index}|"/>
                     </div>
                     <div th:if="${album.collection}">
-                        <td th:id="|td${iterstat.index}|">Divers</td>
+                        <td th:class="row" th:id="|td${iterstat.index}|">Divers</td>
                     </div>
-                    <td th:text="${album.releaseYear}" th:id="|td${iterstat.index}|"/>
-                    <td th:text="${album.genre}" th:id="|td${iterstat.index}|"/>
+                    <td th:class="row" th:text="${album.releaseYear}" th:id="|td${iterstat.index}|"/>
+                    <td th:class="row" th:text="${album.genre}" th:id="|td${iterstat.index}|"/>
                 </tr>
                 </tbody>
             </table>
