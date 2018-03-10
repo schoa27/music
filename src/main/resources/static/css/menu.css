@@ -12,11 +12,13 @@
 ul#nav-menu, ul.sub1 {
     list-style-type: none;
     font-size: 14px;
+    padding: 0 0 0 10%;
 }
 
 ul#nav-menu, ul.sub2 {
     list-style-type: none;
     font-size: 14px;
+    padding: 0 0 0 10%;
 }
 
 ul#nav-menu li {
@@ -58,7 +60,7 @@ ul#nav-menu ul.sub1 {
     display: none;
     position: absolute;
     top: 52px;
-    left: 0px;
+    left: -10%;
 }
 
 ul#nav-menu li:hover .sub1 {
@@ -73,7 +75,7 @@ ul#nav-menu ul.sub2 {
     display: none;
     position: absolute;
     top: 0px;
-    left: 200px;
+    left: 180px;
 }
 
 .darrow {
