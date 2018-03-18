@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>AddImage</title>
+</head>
+<body>
+
+<div th:fragment="addimage">
+    <span><img th:src="@{/image/} + ${image}" th:class="image"/></span>
+</div>
+</body>
+</html>

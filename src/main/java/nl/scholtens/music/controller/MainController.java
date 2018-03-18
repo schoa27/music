@@ -3,6 +3,7 @@ package nl.scholtens.music.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,9 +12,17 @@ import javax.servlet.http.HttpSession;
 public class MainController {
 
     @RequestMapping(value = "/mymusic", method = RequestMethod.GET)
-    public String start(HttpServletRequest request) {
+    public ModelAndView start(HttpServletRequest request, ModelAndView model) {
         initHttpSession(request);
-        return "menu";
+        String images[] = { "ElectricLightOrchestra-ANewWorldRecord"
+                           ,"ElectricLightOrchestra-BalanceOfPower"
+                           ,"ElectricLightOrchestra-Eldorado"
+                           ,"ElectricLightOrchestra-FaceTheMuisc"
+                           ,"ElectricLightOrchestra-Zoom" };
+
+        model.addObject("images", images);
+        model.setViewName("mainpage");
+        return model;
     }
 
     private void initHttpSession(HttpServletRequest request) {

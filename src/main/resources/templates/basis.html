@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>albumlist</title>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/menu.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/page.css}"/>
+</head>
+
+<script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
+
+<body>
+<table th:class="headtable">
+    <tbody>
+    <tr align="center">
+        <td>
+            <h2>Mijn Muziek Overzicht</h2>
+        </td>
+    </tr>
+    <tr>
+        <br/>
+    </tr>
+    </tbody>
+</table>
+
+<div th:include="menu"/>
+
+<table th:class="maintable">
+    <tbody>
+    <tr>
+        <td>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>

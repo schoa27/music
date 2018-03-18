@@ -13,13 +13,13 @@
 
 ul#nav-menu, ul.sub1 {
     list-style-type: none;
-    font-size: 14px;
+    font-size: 16px;
     padding: 0 0 0 17%;
 }
 
 ul#nav-menu, ul.sub2 {
     list-style-type: none;
-    font-size: 14px;
+    font-size: 16px;
     padding: 0 0 0 17%;
 }
 
@@ -39,6 +39,12 @@ ul#nav-menu a {
     line-height: 50px;
     background-color: darkseagreen;
     border: 1px solid darkseagreen;
+    color: #ffffff;
+    background-image: -webkit-linear-gradient(top, #8FBC8F, #31573a);
+    background-image: -moz-linear-gradient(top, #8FBC8F, #31573a);
+    background-image: -ms-linear-gradient(top, #8FBC8F, #31573a);
+    background-image: -o-linear-gradient(top, #8FBC8F, #31573a);
+    background-image: linear-gradient(to bottom, #8FBC8F, #31573a);
     border-radius: 5px;
 }
 
@@ -51,11 +57,23 @@ ul#nav-menu .sub2 a {
 }
 
 ul#nav-menu li:hover > a {
-    background-color: #96A470;
+    background: #8fbc8f;
+    background-image: -webkit-linear-gradient(top, #8fbc8f, #8b9eab);
+    background-image: -moz-linear-gradient(top, #8fbc8f, #8b9eab);
+    background-image: -ms-linear-gradient(top, #8fbc8f, #8b9eab);
+    background-image: -o-linear-gradient(top, #8fbc8f, #8b9eab);
+    background-image: linear-gradient(to bottom, #8fbc8f, #8b9eab);
+
 }
 
 ul#nav-menu li:hover a:hover {
-    background-color: #80b45d;
+    background: #8fbc8f;
+    background-image: -webkit-linear-gradient(top, #8fbc8f, #8b9eab);
+    background-image: -moz-linear-gradient(top, #8fbc8f, #8b9eab);
+    background-image: -ms-linear-gradient(top, #8fbc8f, #8b9eab);
+    background-image: -o-linear-gradient(top, #8fbc8f, #8b9eab);
+    background-image: linear-gradient(to bottom, #8fbc8f, #8b9eab);
+
 }
 
 ul#nav-menu ul.sub1 {

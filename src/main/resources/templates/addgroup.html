@@ -2,47 +2,96 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <script type='text/javascript' src='http://code.jquery.com/jquery-1.11.0.js'></script>
-    <title>AddGroup </title>
+    <title>albumlist</title>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/menu.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/page.css}"/>
+    <script type="text/javascript" th:src="@{/js/jquery-1.11.0.js}"/>
+    <script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
 </head>
+
 <body>
+<table th:class="headtable">
+    <tbody>
+    <tr align="center">
+        <td>
+            <h2>Mijn Muziek Overzicht</h2>
+        </td>
+    </tr>
+    <tr>
+        <br/>
+    </tr>
+    </tbody>
+</table>
 
-<form th:action="@{/group/add}" th:method="post" th:object="${dto}">
-    <H3>Toevoegen Groep</H3>
+<div th:include="menu"/>
 
-    <span>gegevens Groep</span>
-    <br/>
-    <span>Naam groep</span>
-    <input th:id="input-group-name" th:type="text" th:size="50" th:maxlength="50" th:field="*{group.name}"/>
-    <br/>
-    <span>afbeedling</span>
-    <input th:id="input-group-image" th:type="text" th:size="50" th:maxlength="255" th:field="*{group.image}"/>
-    <br/>
-    <table class="table">
-        <thead>
-        <th>Members</th>
-        <th>&nbsp;</th>
-        </thead>
-        <tbody>
-        <tr>
-            <td>
-                <select name="artists">
-                    <option value="0">Selecteer artist</option>
-                    <option th:each="artist : ${dto.artists}" th:value="${artist.id}" th:text="${artist.name}"></option>
-                </select>
-            </td>
-            <td><a href="#" class="remove-row">Verwijderen</a></td>
-        </tr>
-        </tbody>
-    </table>
-    <div><a href="#" id="add-row">Toevoegen</a></div>
-    <br/>
-    <input th:id="add-group-submit" th:type="submit" th:value="Opslaan"/>
-    <input th:id="add-group-reset" th:type="reset" th:value="Reset"/>
+<table th:class="maintable">
+    <tbody>
+    <tr>
+        <td>
+            <fieldset>
+                <form th:action="@{/group/add}" th:method="post" th:object="${dto}">
+                    <H3>Toevoegen Groep</H3>
 
-</form>
+                    <table th:class="inputtable">
+                        <tr>
+                            <td>Gegevens groep</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Naam groep</td>
+                            <td>
+                                <input th:id="input-group-name" th:type="text" th:size="50" th:maxlength="50"
+                                       th:field="*{group.name}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Naam afbeelding</td>
+                            <td>
+                                <input th:id="input-group-image" th:type="text" th:size="50" th:maxlength="255"
+                                       th:field="*{group.image}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <table class="table left120">
+                                <tbody>
+                                <tr>
+                                    <td>Naam lid</td>
+                                    <td>
+                                        <select class="left175 btn select" name="artists">
+                                            <option value="0">Selecteer artist</option>
+                                            <option th:each="artist : ${dto.artists}" th:value="${artist.id}"
+                                                    th:text="${artist.name}"></option>
+                                        </select>
+                                    </td>
+                                    <td><button class="remove-row btn addbutton">Verwijderen</button></td>
+                                </tr>
+                                </tbody>
+                            </table>
 
-<script type="text/javascript" th:src="@{/js/tableFunctions.js}"/>
+                            <div><button class="btn addbuttont" id="add-row">Toevoegen</button></div>
+                            <br/>
+                            <table th:class="buttontable">
+                                <tr>
+                                    <td th:class="buttontd">
+                                        <input th:id="add-group-submit" th:type="submit" th:class="btn" th:value="Opslaan"/>
+                                    </td>
+                                    <td th:class="buttontd">
+                                        <input th:id="add-group-reset" th:type="reset" th:class="btn" th:value="Reset"/>
+                                    </td>
+                                 </tr>
+                            </table>
+                        </tr>
 
+
+
+                    </table>
+                </form>
+            </fieldset>
+        </td>
+    </tr>
+    </tbody>
+</table>
 </body>
+<script type="text/javascript" th:src="@{/js/tableFunctions.js}"/>
 </html>
