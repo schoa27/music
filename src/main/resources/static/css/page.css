@@ -19,7 +19,7 @@ h3 {
 }
 
 .select {
-    width: 57ch;
+    width: 35ch;
 }
 
 .select option {
@@ -64,7 +64,7 @@ h3 {
 }
 
 .inputtable {
-    width: 100%;
+    width: 50%;
     margin: 15px;
     margin-left: 120px;
 }
@@ -73,8 +73,8 @@ h3 {
     margin-left: 120px;
 }
 
-.left175 {
-    margin-left: 175px;
+.left108 {
+    margin-left: 108px;
 }
 
 .left375 {
@@ -105,7 +105,7 @@ h3 {
 
 .addbuttont {
     width: 165px;
-    margin-left: 98ch;
+    margin-left: 616px;
 }
 
 .columncenter {

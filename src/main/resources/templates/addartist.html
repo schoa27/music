@@ -30,30 +30,39 @@
     <tr>
         <td>
             <fieldset>
-
-            <form th:action="@{/artist/add}" th:method="post" th:object="${dto}">
-                <H3>Toevoegen Artiest</H3>
-                <span>gegevens Artiest</span>
-                <table>
-                    <tr>
-                        <td>Naam Artiest</td>
-                        <td>
-                            <input th:id="input-artist-name" th:type="text" th:size="30" th:maxlength="50"
-                                   th:field="*{artist.name}"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Naam afbeelding</td>
-                        <td>
-                            <input th:id="input-artist-image" th:type="text" th:size="30" th:maxlength="255"
-                                   th:field="*{artist.image}"/>
-                        </td>
-                    </tr>
-                </table>
-
-                <input th:id="add-artist-submit" th:type="submit" th:value="Opslaan"/>
-                <input th:id="add-artist-reset" th:type="reset" th:value="Reset"/>
-            </form>
+                <form th:action="@{/artist/add}" th:method="post" th:object="${dto}">
+                    <H3>Toevoegen Artiest</H3>
+                    <table th:class="inputtable">
+                        <tr>
+                            <td>Gegevens Artiest</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Naam Artiest</td>
+                            <td>
+                                <input th:id="input-artist-name" th:type="text" th:size="30" th:maxlength="50"
+                                       th:field="*{artist.name}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Naam afbeelding</td>
+                            <td>
+                                <input th:id="input-artist-image" th:type="text" th:size="30" th:maxlength="255"
+                                       th:field="*{artist.image}"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <table th:class="buttontable">
+                        <tr>
+                            <td th:class="buttontd">
+                                <input th:id="add-artist-submit" th:type="submit" th:class="btn" th:value="Opslaan"/>
+                            </td>
+                            <td th:class="buttontd">
+                                <input th:id="add-artist-reset" th:type="reset" th:class="btn" th:value="Reset"/>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
             </fieldset>
         </td>
     </tr>

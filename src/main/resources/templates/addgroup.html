@@ -41,14 +41,14 @@
                         <tr>
                             <td>Naam groep</td>
                             <td>
-                                <input th:id="input-group-name" th:type="text" th:size="50" th:maxlength="50"
+                                <input th:id="input-group-name" th:type="text" th:size="30" th:maxlength="50"
                                        th:field="*{group.name}"/>
                             </td>
                         </tr>
                         <tr>
                             <td>Naam afbeelding</td>
                             <td>
-                                <input th:id="input-group-image" th:type="text" th:size="50" th:maxlength="255"
+                                <input th:id="input-group-image" th:type="text" th:size="30" th:maxlength="50"
                                        th:field="*{group.image}"/>
                             </td>
                         </tr>
@@ -58,7 +58,7 @@
                                 <tr>
                                     <td>Naam lid</td>
                                     <td>
-                                        <select class="left175 btn select" name="artists">
+                                        <select class="left108 btn select" name="artists">
                                             <option value="0">Selecteer artist</option>
                                             <option th:each="artist : ${dto.artists}" th:value="${artist.id}"
                                                     th:text="${artist.name}"></option>
@@ -82,9 +82,6 @@
                                  </tr>
                             </table>
                         </tr>
-
-
-
                     </table>
                 </form>
             </fieldset>
