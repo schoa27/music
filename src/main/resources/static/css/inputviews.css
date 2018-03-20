@@ -9,10 +9,6 @@ h2 {
     font-size: xx-large;
 }
 
-th:hover {
-    background-color: #96A470;
-}
-
 h3 {
     text-align: center;
     margin: 10px;
@@ -34,12 +30,39 @@ h3 {
     padding-top: 15px;
 }
 
+
 .maintable {
     width: 100%;
-    border-style: solid;
     padding-bottom: 10px;
     padding-top: 15px;
-    border-spacing: 10px
+    border-spacing: 10px;
+}
+
+.inputtable {
+    width: 700px;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    margin-left: 210px;
+    border-style: solid;
+    border: black 1px;
+    border-collapse: collapse;
+
+
+}
+
+.col150 {
+   width: 150px;
+}
+
+.col250 {
+    width: 250px;
+}
+
+.colx {
+    width: 250px;
+}
+.col300 {
+    width: 300px;
 }
 
 .listtable {
@@ -52,20 +75,23 @@ h3 {
     border-spacing: 5px;
 }
 
-.inputtable {
-    width: 50%;
-    border-style: solid;
-    margin: 15px;
-    margin-left: 120px;
+.imagetable {
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+    border-style: none;
+    padding: 0px;
+    border-spacing: 0px;
+    line-height: 10px;
 }
+
 
 .left120 {
     margin-left: 120px;
-    border-style: solid;
 }
 
 .left108 {
-    margin-left: 33%;
+    margin-left: 20%;
 }
 
 .left375 {
@@ -140,10 +166,4 @@ tr.row {
     background-image: -o-linear-gradient(top, #8fbc8f, #8b9eab);
     background-image: linear-gradient(to bottom, #8fbc8f, #8b9eab);
     text-decoration: none;
-}
-.withtable {
-    width: 185px;
-}
-.kader {
-    border-style: solid;
 }

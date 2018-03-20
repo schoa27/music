@@ -103,6 +103,7 @@ ul#nav-menu ul.sub2 {
     position: absolute;
     top: 17px;
     right: 4px;
+    color: white;
 }
 
 .rarrow {
@@ -110,4 +111,5 @@ ul#nav-menu ul.sub2 {
     position: absolute;
     top: 19px;
     right: 4px;
+    color: white;
 }
