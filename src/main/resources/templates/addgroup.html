@@ -70,13 +70,17 @@
                                         <button class="remove-row btn addbutton">Verwijderen</button>
                                     </td>
                                 </tr>
-                            </tbody>
+                                </tbody>
                             </table>
                             <table th:class="buttontable">
                                 <tr>
-                                    <td>
-                                        <button class="btn addbutton" id="add-row">Toevoegen</button>
+                                    <td th:class="buttontd">
+                                        <button class="btn addbutton" id="add-row">Lid Toevoegen</button>
                                     </td>
+                                </tr>
+                            </table>
+                            <table th:class="buttontable">
+                                <tr>
                                     <td th:class="buttontd">
                                         <input th:id="add-group-submit" th:type="submit" th:class="btn"
                                                th:value="Opslaan"/>
