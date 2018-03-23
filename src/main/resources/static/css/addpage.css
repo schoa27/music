@@ -1,0 +1,41 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: large;
+    cursor: pointer;
+}
+
+.select {
+    width: 23ch;
+    box-shadow: none;
+}
+
+.select option {
+    background: black;
+    color: white;
+}
+
+.inputtable {
+    width: 100%;
+    margin: 15px;
+    margin-left: 120px;
+}
+
+.left120 {
+    margin-left: 120px;
+}
+
+.buttontable {
+    margin-left: 120px;
+    padding: 2px;
+}
+
+
+.buttontd input {
+    width: 165px;
+    padding-left: 15px;
+}
+
+.selecttd {
+    width: 24%;
+}

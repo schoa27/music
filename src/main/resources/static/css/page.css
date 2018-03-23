@@ -18,15 +18,6 @@ h3 {
     margin: 10px;
 }
 
-.select {
-    width: 25ch;
-}
-
-.select option {
-    background: black;
-    color: white;
-}
-
 .headtable {
     align-items: center;
     width: 100%;
@@ -36,7 +27,6 @@ h3 {
 
 .maintable {
     width: 100%;
-    border-style: solid;
     padding-bottom: 10px;
     padding-top: 15px;
     border-spacing: 10px
@@ -52,18 +42,6 @@ h3 {
     border-spacing: 5px;
 }
 
-.inputtable {
-    width: 100%;
-    border-style: solid;
-    margin: 15px;
-    margin-left: 120px;
-}
-
-.left120 {
-    margin-left: 120px;
-    border-style: solid;
-}
-
 .left108 {
     margin-left: 33%;
 }
@@ -75,28 +53,6 @@ h3 {
 .image {
     width: 100%;
     height: 100%;
-}
-
-.buttontable {
-    margin-left: 100px;
-    padding: 2px;
-}
-
-.buttontd {
-    padding-left: 15px;
-}
-
-.buttontd input {
-    width: 165px;
-}
-
-.addbutton {
-    width: 165px;
-}
-
-.addbuttont {
-    width: 165px;
-    margin-left: 55%;
 }
 
 .columncenter {
@@ -113,37 +69,4 @@ tr.row {
     border: darkseagreen solid 3px;
     background-color: darkseagreen;
     height: 40px;
-}
-
-.btn {
-    background: #9bdbb9;
-    background: #8FBC8F;
-    background-image: -webkit-linear-gradient(top, #8FBC8F, #31573a);
-    background-image: -moz-linear-gradient(top, #8FBC8F, #31573a);
-    background-image: -ms-linear-gradient(top, #8FBC8F, #31573a);
-    background-image: -o-linear-gradient(top, #8FBC8F, #31573a);
-    background-image: linear-gradient(to bottom, #8FBC8F, #31573a);
-    border-radius: 5px;
-    font-family: Monospaced;
-    color: #ffffff;
-    font-size: 18px;
-    padding: 5px 10px 10px 15px;
-    text-decoration: none;
-    border-color: darkseagreen;
-}
-
-.btn:hover {
-    background: #8fbc8f;
-    background-image: -webkit-linear-gradient(top, #8fbc8f, #8b9eab);
-    background-image: -moz-linear-gradient(top, #8fbc8f, #8b9eab);
-    background-image: -ms-linear-gradient(top, #8fbc8f, #8b9eab);
-    background-image: -o-linear-gradient(top, #8fbc8f, #8b9eab);
-    background-image: linear-gradient(to bottom, #8fbc8f, #8b9eab);
-    text-decoration: none;
-}
-.withtable {
-    width: 185px;
-}
-.kader {
-    border-style: solid;
 }

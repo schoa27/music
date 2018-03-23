@@ -2,94 +2,132 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <script type='text/javascript' src='http://code.jquery.com/jquery-1.11.0.js'></script>
-    <link rel="stylesheet" type="text/css"
-          href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.css"/>
-    <script type='text/javascript'
-            src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
-    <title>AddAlbum</title>
+    <title>albumlist</title>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/menu.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/page.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/addpage.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/buttons.css}"/>
+    <script type="text/javascript" th:src="@{/js/jquery-1.11.0.js}"/>
+    <script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
 </head>
 
 <script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
 
 <body>
-<form th:action="@{/album/add}" th:method="post" th:object="${dto}">
+<table th:class="headtable">
+    <tbody>
+    <tr align="center">
+        <td>
+            <h2>Mijn Muziek Overzicht</h2>
+        </td>
+    </tr>
+    <tr>
+        <br/>
+    </tr>
+    </tbody>
+</table>
 
-    <div th:include="fragments/albumhead"/>
+<div th:include="menu"/>
 
-    <br/>
+<table th:class="maintable">
+    <tbody>
+    <tr>
+        <td>
+            <fieldset>
+                <form th:action="@{/album/add}" th:method="post" th:object="${dto}">
+                    <H3>Toevoegen Album</H3>
 
-    <fieldset>
-        <table class="table table-striped">
-            <thead>
-            <th>title</th>
-            <th>duration</th>
-            <th>disk</th>
-            <th>Artiest/Groep</th>
-            <th>&nbsp;</th>
-            </thead>
-            <tbody>
-            <tr>
-                <td><input type="text" value="" maxlength="50" size="50" name="title"/>
-                </td>
-                <td><input type="text" value="" maxlength="5" size="5" name="duration"/>
-                </td>
-                <td><input type="text" value="" maxlength="2" size="2" name="disk"/>
-                </td>
+                    <table>
+                        <tr>
+                            <td>
+                                <div th:include="fragments/albumhead"/>
+                            </td>
+                        </tr>
+                    </table>
 
-                <td>
+                    <table class="table left120">
+                        <thead>
+                        <th>tietel</th>
+                        <th>duur</th>
+                        <th>disk</th>
+                        <th>Artiest/Groep</th>
+                        <th>&nbsp;</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" value="" maxlength="50" size="30" name="title"/>
+                            </td>
+                            <td>
+                                <input type="text" value="" maxlength="5" size="5" name="duration"/>
+                            </td>
+                            <td>
+                                <input type="text" value="" maxlength="2" size="2" name="disk"/>
+                            </td>
 
-                    <select name="artist" id="artist" >
-                        <option value="0">Selecteer artist</option>
-                        <option th:each="artist : ${dto.artists}" th:value="${artist.id}"
-                                th:text="${artist.name}"></option>
-                    </select>
-                </td>
-                <td>
-                    <select name="group" id="group" >
-                        <option value="0">Selecteer groep</option>
-                        <option th:each="group : ${dto.groups}" th:value="${group.id}"
-                                th:text="${group.name}"></option>
-                    </select>
-                </td>
+                            <div style="display: block" th:id="button">
+                                <td>
+                                    <input th:class="btn" th:type="button"
+                                           onclick="javascript:showhide('group' ,'artist');"
+                                           value="Artiest/Groep"/>
+                                </td>
+                                <td>
+                                    <div style="display:none" th:id="group">
+                                        <select class="btn select" th:field="${dto.album.group.id}">
+                                            <option value="0">Selecteer groep</option>
+                                            <option th:each="group : ${dto.groups}" th:value="${group.id}"
+                                                    th:text="${group.name}"></option>
+                                        </select>
+                                    </div>
 
-                <td><a href="#" class="remove-row"><span class="glyphicon glyphicon-minus"></span></a></td>
-            </tr>
-            </tbody>
-        </table>
-        <div><a href="#" id="add-row"><span class="glyphicon glyphicon-plus"></span>Add Song</a></div>
-
-        <div id="text"></div>
-    </fieldset>
-
-    <br/>
-    <input th:id="add-artist-submit" th:type="submit" th:value="Verder"/>
-    <input th:id="add-artist-reset" th:type="reset" th:value="Reset"/>
-
-
-</form>
-<script>
-
-    $('#add-row').on('click', function (e) {
-        enableselection();
-        e.preventDefault();
-        var tableBody = $('.table > tbody'),
-            lastRowClone = $('tr:last-child', tableBody).clone();
-        $('input[type=text]', lastRowClone).val('');
-        tableBody.append(lastRowClone);
-
-    });
-
-    $('.table').on('click', '.remove-row', function (e) {
-        e.preventDefault();
-        var row = $(this).parent().parent();
-        row.remove();
-    })
-
-</script>
+                                    <div style="display:block" th:id="artist">
+                                        <select class="btn select" th:field="${dto.album.artist.id}">
+                                            <option value="0">Selecteer artist</option>
+                                            <option th:each="artist : ${dto.artists}"
+                                                    th:value="${artist.id}"
+                                                    th:text="${artist.name}"></option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </div>
+                            <td>
+                                <button class="remove-row btn addbutton">Verwijderen</button>
+                            </td>
 
 
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table th:class="buttontable">
+                        <tr>
+                            <td th:class="buttontd">
+                                <button class="btn addbutton" id="add-row">Nr. Toevoegen</button>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table th:class="buttontable">
+                        <tr>
+                            <td th:class="buttontd">
+                                <input th:id="add-group-submit" th:type="submit" th:class="btn"
+                                       th:value="Opslaan"/>
+                            </td>
+                            <td th:class="buttontd">
+                                <input th:id="add-group-reset" th:type="reset" th:class="btn" th:value="Reset"/>
+                            </td>
+                        </tr>
+                    </table>
+
+                </form>
+            </fieldset>
+        </td>
+    </tr>
+    </tbody>
+</table>
 </body>
+
+<script type="text/javascript" th:src="@{/js/tableFunctions.js}"/>
 
 </html>
 

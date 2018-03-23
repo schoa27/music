@@ -45,7 +45,6 @@ ul#nav-menu a {
     background-image: -ms-linear-gradient(top, #8FBC8F, #31573a);
     background-image: -o-linear-gradient(top, #8FBC8F, #31573a);
     background-image: linear-gradient(to bottom, #8FBC8F, #31573a);
-    border-radius: 5px;
 }
 
 ul#nav-menu .sub1 a {

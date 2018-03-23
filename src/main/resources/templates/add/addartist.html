@@ -5,6 +5,8 @@
     <title>AddAlbum</title>
     <link rel="stylesheet" text="text/css" th:href="@{/css/menu.css}"/>
     <link rel="stylesheet" text="text/css" th:href="@{/css/page.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/addpage.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/buttons.css}"/>
 </head>
 
 <script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
@@ -32,6 +34,7 @@
             <fieldset>
                 <form th:action="@{/artist/add}" th:method="post" th:object="${dto}">
                     <H3>Toevoegen Artiest</H3>
+
                     <table>
                         <tr>
                             <td>
@@ -60,6 +63,7 @@
                             </td>
                         </tr>
                     </table>
+
                     <table th:class="buttontable">
                         <tr>
                             <td th:class="buttontd">
@@ -70,6 +74,7 @@
                             </td>
                         </tr>
                     </table>
+
                 </form>
             </fieldset>
         </td>

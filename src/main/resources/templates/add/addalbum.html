@@ -5,6 +5,8 @@
     <title>AddAlbum</title>
     <link rel="stylesheet" text="text/css" th:href="@{/css/menu.css}"/>
     <link rel="stylesheet" text="text/css" th:href="@{/css/page.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/addpage.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/buttons.css}"/>
     <script type="text/javascript" th:src="@{/js/jquery-1.11.0.js}"/>
     <script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
 </head>
@@ -32,6 +34,7 @@
             <fieldset>
                 <form th:action="@{/album/add}" th:method="post" th:object="${dto}" th:id="songListForm">
                     <H3>Toevoegen Album</H3>
+
                     <table>
                         <tr>
                             <td>
@@ -73,11 +76,11 @@
                         </tr>
                     </table>
 
-                    <table class="table kader left120">
+                    <table class="table left120">
                         <thead>
-                        <th>title</th>
-                        <th>duration</th>
-                        <th>disk</th>
+                        <th>tietel</th>
+                        <th>duur</th>
+                        <th>schijf</th>
                         <th>&nbsp;</th>
                         </thead>
                         <tbody>

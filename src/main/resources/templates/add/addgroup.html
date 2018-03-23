@@ -5,6 +5,8 @@
     <title>albumlist</title>
     <link rel="stylesheet" text="text/css" th:href="@{/css/menu.css}"/>
     <link rel="stylesheet" text="text/css" th:href="@{/css/page.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/addpage.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/buttons.css}"/>
     <script type="text/javascript" th:src="@{/js/jquery-1.11.0.js}"/>
     <script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
 </head>
@@ -66,7 +68,7 @@
                         <tbody>
                         <tr>
 
-                            <td th:class="withtable">Naam lid</td>
+                            <td th:class="selecttd">Naam lid</td>
                             <td>
                                 <select class="btn select" name="artists">
                                     <option value="0">Selecteer artist</option>
@@ -111,6 +113,7 @@
                             </td>
                         </tr>
                     </table>
+
                 </form>
             </fieldset>
         </td>
