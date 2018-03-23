@@ -46,7 +46,7 @@ public class AlbumController {
 
         dto.setAlbums(albumService.getAllAlbums("", false));
         model.addObject("dto", dto);
-        model.setViewName("albumlist");
+        model.setViewName("/view/viewalbumlist");
         return model;
     }
 
@@ -75,7 +75,7 @@ public class AlbumController {
 
         dto.setAlbums(albumService.getAllAlbums(item, ascDesc));
         model.addObject("dto", dto);
-        model.setViewName("albumlist");
+        model.setViewName("/view/viewalbumlist");
         return model;
     }
 
