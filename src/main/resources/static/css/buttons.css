@@ -13,6 +13,7 @@
     text-decoration: none;
     border: none;
     height: 35px;
+    cursor: pointer;
 }
 
 .btn:hover {
