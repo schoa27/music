@@ -63,45 +63,45 @@
                             </td>
                         </tr>
                     </table>
+                    <h4 th:class="left120">Leden</h4>
 
-                    <table class="table left120">
-                        <tbody>
-                        <tr>
+                    <fieldset>
+                        <table class="table left120">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <select class="btn select" name="artists">
+                                        <option value="0">Selecteer artist</option>
+                                        <option th:each="artist : ${dto.artists}"
+                                                th:value="${artist.id}"
+                                                th:text="${artist.name}"></option>
+                                    </select>
+                                </td>
+                                <td>vanaf</td>
+                                <td>
+                                    <input th:id="input-group-name" th:type="text" th:size="10" th:maxlength="10"
+                                           th:field="*{group.name}"/>
+                                </td>
+                                <td>tot</td>
+                                <td>
+                                    <input th:id="input-group-name" th:type="text" th:size="10" th:maxlength="10"
+                                           th:field="*{group.name}"/>
+                                </td>
+                                <td>
+                                    <button class="remove-row btn addbutton">Verwijderen</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
 
-                            <td th:class="selecttd">Naam lid</td>
-                            <td>
-                                <select class="btn select" name="artists">
-                                    <option value="0">Selecteer artist</option>
-                                    <option th:each="artist : ${dto.artists}"
-                                            th:value="${artist.id}"
-                                            th:text="${artist.name}"></option>
-                                </select>
-                            </td>
-                            <td>vanaf</td>
-                            <td>
-                                <input th:id="input-group-name" th:type="text" th:size="10" th:maxlength="10"
-                                       th:field="*{group.name}"/>
-                            </td>
-                            <td>tot</td>
-                            <td>
-                                <input th:id="input-group-name" th:type="text" th:size="10" th:maxlength="10"
-                                       th:field="*{group.name}"/>
-                            </td>
-                            <td>
-                                <button class="remove-row btn addbutton">Verwijderen</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <table th:class="buttontable">
-                        <tr>
-                            <td th:class="buttontd">
-                                <button class="btn addbutton" id="add-row">Lid Toevoegen</button>
-                            </td>
-                        </tr>
-                    </table>
-
+                        <table th:class="buttontable">
+                            <tr>
+                                <td th:class="buttontd">
+                                    <button class="btn addbutton" id="add-row">Lid Toevoegen</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
                     <table th:class="buttontable">
                         <tr>
                             <td th:class="buttontd">

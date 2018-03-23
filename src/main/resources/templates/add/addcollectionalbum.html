@@ -44,69 +44,67 @@
                             </td>
                         </tr>
                     </table>
-
-                    <table class="table left120">
-                        <thead>
-                        <th>tietel</th>
-                        <th>duur</th>
-                        <th>disk</th>
-                        <th>Artiest/Groep</th>
-                        <th>&nbsp;</th>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <input type="text" value="" maxlength="50" size="30" name="title"/>
-                            </td>
-                            <td>
-                                <input type="text" value="" maxlength="5" size="5" name="duration"/>
-                            </td>
-                            <td>
-                                <input type="text" value="" maxlength="2" size="2" name="disk"/>
-                            </td>
-
-                            <div style="display: block" th:id="button">
+                    <h4 th:class="left120">Nummers</h4>
+                    <fieldset>
+                        <table class="table left120">
+                            <thead>
+                            <th>tietel</th>
+                            <th>duur</th>
+                            <th>disk</th>
+                            <th>Artiest/Groep</th>
+                            </thead>
+                            <tbody>
+                            <tr>
                                 <td>
-                                    <input th:class="btn" th:type="button"
-                                           onclick="javascript:showhide('group' ,'artist');"
-                                           value="Artiest/Groep"/>
+                                    <input type="text" value="" maxlength="50" size="30" name="title"/>
                                 </td>
                                 <td>
-                                    <div style="display:none" th:id="group">
-                                        <select class="btn select" th:field="${dto.album.group.id}">
-                                            <option value="0">Selecteer groep</option>
-                                            <option th:each="group : ${dto.groups}" th:value="${group.id}"
-                                                    th:text="${group.name}"></option>
-                                        </select>
-                                    </div>
-
-                                    <div style="display:block" th:id="artist">
-                                        <select class="btn select" th:field="${dto.album.artist.id}">
-                                            <option value="0">Selecteer artist</option>
-                                            <option th:each="artist : ${dto.artists}"
-                                                    th:value="${artist.id}"
-                                                    th:text="${artist.name}"></option>
-                                        </select>
-                                    </div>
+                                    <input type="text" value="" maxlength="5" size="5" name="duration"/>
                                 </td>
-                            </div>
-                            <td>
-                                <button class="remove-row btn addbutton">Verwijderen</button>
-                            </td>
+                                <td>
+                                    <input type="text" value="" maxlength="2" size="2" name="disk"/>
+                                </td>
 
+                                <div style="display: block" th:id="button">
+                                    <td>
+                                        <input th:class="btn" th:type="button"
+                                               onclick="javascript:showhide('group' ,'artist');"
+                                               value="Artiest/Groep"/>
+                                    </td>
+                                    <td>
+                                        <div style="display:none" th:id="group">
+                                            <select class="btn select" th:field="${dto.album.group.id}">
+                                                <option value="0">Selecteer groep</option>
+                                                <option th:each="group : ${dto.groups}" th:value="${group.id}"
+                                                        th:text="${group.name}"></option>
+                                            </select>
+                                        </div>
 
-                        </tr>
-                        </tbody>
-                    </table>
+                                        <div style="display:block" th:id="artist">
+                                            <select class="btn select" th:field="${dto.album.artist.id}">
+                                                <option value="0">Selecteer artist</option>
+                                                <option th:each="artist : ${dto.artists}"
+                                                        th:value="${artist.id}"
+                                                        th:text="${artist.name}"></option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </div>
+                                <td>
+                                    <button class="remove-row btn addbutton">Verwijderen</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
 
-                    <table th:class="buttontable">
-                        <tr>
-                            <td th:class="buttontd">
-                                <button class="btn addbutton" id="add-row">Nr. Toevoegen</button>
-                            </td>
-                        </tr>
-                    </table>
-
+                        <table th:class="buttontable">
+                            <tr>
+                                <td th:class="buttontd">
+                                    <button class="btn addbutton" id="add-row">Nr. Toevoegen</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
                     <table th:class="buttontable">
                         <tr>
                             <td th:class="buttontd">

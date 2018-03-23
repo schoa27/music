@@ -75,39 +75,42 @@
                             </td>
                         </tr>
                     </table>
+                    <h4 th:class="left120">Nummers</h4>
 
-                    <table class="table left120">
-                        <thead>
-                        <th>tietel</th>
-                        <th>duur</th>
-                        <th>schijf</th>
-                        <th>&nbsp;</th>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <input type="text" value="" maxlength="50" size="50" name="title"/>
-                            </td>
-                            <td>
-                                <input type="text" value="" maxlength="5" size="5" name="duration"/>
-                            </td>
-                            <td>
-                                <input type="text" value="" maxlength="2" size="2" name="disk"/>
-                            </td>
-                            <td>
-                                <button class="remove-row btn addbutton">Verwijderen</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <fieldset>
+                        <table class="table left120">
+                            <thead>
+                            <th>tietel</th>
+                            <th>duur</th>
+                            <th>schijf</th>
+                            <th>&nbsp;</th>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <input type="text" value="" maxlength="50" size="50" name="title"/>
+                                </td>
+                                <td>
+                                    <input type="text" value="" maxlength="5" size="5" name="duration"/>
+                                </td>
+                                <td>
+                                    <input type="text" value="" maxlength="2" size="2" name="disk"/>
+                                </td>
+                                <td>
+                                    <button class="remove-row btn addbutton">Verwijderen</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
 
-                    <table th:class="buttontable">
-                        <tr>
-                            <td th:class="buttontd">
-                                <button class="btn addbutton" id="add-row">Nr. Toevoegen</button>
-                            </td>
-                        </tr>
-                    </table>
+                        <table th:class="buttontable">
+                            <tr>
+                                <td th:class="buttontd">
+                                    <button class="btn addbutton" id="add-row">Nr. Toevoegen</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
 
                     <table th:class="buttontable">
                         <tr>
