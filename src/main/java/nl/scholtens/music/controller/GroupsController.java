@@ -1,6 +1,5 @@
 package nl.scholtens.music.controller;
 
-import nl.scholtens.music.dataTransferObjects.ArtistDTO;
 import nl.scholtens.music.dataTransferObjects.GroupDTO;
 import nl.scholtens.music.domain.Group;
 import nl.scholtens.music.services.ArtistService;
@@ -15,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 @Controller
 public class GroupsController {
@@ -92,7 +90,7 @@ public class GroupsController {
         GroupDTO dto = new GroupDTO();
         dto.setArtists(artistService.findAllArtists("", false));
         model.addObject("dto", dto);
-        model.setViewName("addgroup");
+        model.setViewName("/add/addgroup");
         return model;
     }
 

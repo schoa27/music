@@ -7,35 +7,54 @@
 <body>
 
 <div th:fragment="albumhead">
-    <H3>Toevoegen Album</H3>
-
-    <span>gegevens Album</span>
-    <br/>
-
-    <span>Album tietel </span>
-    <input th:id="input-album-name" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.title}"/>
-    <br/>
-
-    <span>Release jaar </span>
-    <input th:id="input-releaseYear" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.releaseYear}"/>
-    <br/>
-
-    <span>Genre</span>
-    <input th:id="input-genre" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.genre}"/>
-    <br/>
-
-    <span>Media type</span>
-    <input th:id="input-mediatype" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.mediaType}"/>
-    <br/>
-
-    <span>Aantal muziek dragers</span>
-    <input th:id="input-mediatype" th:type="text" th:size="1" th:maxlength="1" th:field="*{totaldiscs}"/>
-    <br/>
-
-    <span>Pad afbeelding</span>
-    <input th:id="input-album-image" th:type="text" th:size="30" th:maxlength="255" th:field="*{album.image}"/>
-    <br/>
-
+    <table th:class="inputtable">
+        <tbody>
+        <tr>
+            <td>Gegevens Album</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Album tietel</td>
+            <td>
+                <input th:id="input-album-name" th:type="text" th:size="30" th:maxlength="50"
+                       th:field="*{album.title}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Release Jaar</td>
+            <td>
+                <input th:id="input-album-name" th:type="text" th:size="30" th:maxlength="50"
+                       th:field="*{album.title}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Genre</td>
+            <td>
+                <input th:id="input-genre" th:type="text" th:size="30" th:maxlength="50" th:field="*{album.genre}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Media type</td>
+            <td>
+                <input th:id="input-mediatype" th:type="text" th:size="30" th:maxlength="50"
+                       th:field="*{album.mediaType}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Aantal muziek drager</td>
+            <td>
+                <input th:id="input-mediatype" th:type="text" th:size="1" th:maxlength="1" th:field="*{totaldiscs}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Naam van afbbeelding</td>
+            <td>
+                <input th:id="input-album-image" th:type="text" th:size="30" th:maxlength="255"
+                       th:field="*{album.image}"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

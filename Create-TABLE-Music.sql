@@ -26,7 +26,9 @@ TABLESPACE pg_default;
 CREATE TABLE music.gp_at
 (
     gp_id integer,
-    at_id integer
+    at_id integer,
+    at_startdate date,
+    at_enddate date
 )
 WITH (
     OIDS = FALSE

@@ -19,12 +19,12 @@ h3 {
 }
 
 .select {
-    width: 35ch;
+    width: 25ch;
 }
 
 .select option {
-    background: white;
-    color: black;
+    background: black;
+    color: white;
 }
 
 .headtable {
@@ -53,7 +53,7 @@ h3 {
 }
 
 .inputtable {
-    width: 50%;
+    width: 100%;
     border-style: solid;
     margin: 15px;
     margin-left: 120px;
@@ -127,7 +127,7 @@ tr.row {
     font-family: Monospaced;
     color: #ffffff;
     font-size: 18px;
-    padding: 10px 20px 10px 20px;
+    padding: 5px 10px 10px 15px;
     text-decoration: none;
     border-color: darkseagreen;
 }

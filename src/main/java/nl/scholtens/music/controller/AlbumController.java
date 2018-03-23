@@ -133,7 +133,7 @@ public class AlbumController {
         dto.setGroups(groupService.getAllGroups("name",true));
         dto.setArtists(artistService.findAllArtists("name", true));
         model.addObject("dto", dto);
-        model.setViewName("addalbum");
+        model.setViewName("/add/addalbum");
         return model;
     }
 
@@ -144,7 +144,7 @@ public class AlbumController {
         dto.setGroups(groupService.getAllGroups("name",true));
         dto.setArtists(artistService.findAllArtists("name", true));
         model.addObject("dto", dto);
-        model.setViewName("addcollectionalbum");
+        model.setViewName("/add/addcollectionalbum");
         return model;
     }
 

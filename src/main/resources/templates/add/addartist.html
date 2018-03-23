@@ -32,23 +32,31 @@
             <fieldset>
                 <form th:action="@{/artist/add}" th:method="post" th:object="${dto}">
                     <H3>Toevoegen Artiest</H3>
-                    <table th:class="inputtable">
+                    <table>
                         <tr>
-                            <td>Gegevens Artiest</td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>Naam Artiest</td>
                             <td>
-                                <input th:id="input-artist-name" th:type="text" th:size="30" th:maxlength="50"
-                                       th:field="*{artist.name}"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Naam afbeelding</td>
-                            <td>
-                                <input th:id="input-artist-image" th:type="text" th:size="30" th:maxlength="255"
-                                       th:field="*{artist.image}"/>
+                                <table th:class="inputtable">
+                                    <tr>
+                                        <td>Gegevens Artiest</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Naam Artiest</td>
+                                        <td>
+                                            <input th:id="input-artist-name" th:type="text" th:size="30"
+                                                   th:maxlength="50"
+                                                   th:field="*{artist.name}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Naam van afbeelding</td>
+                                        <td>
+                                            <input th:id="input-artist-image" th:type="text" th:size="30"
+                                                   th:maxlength="50"
+                                                   th:field="*{artist.image}"/>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
                     </table>
