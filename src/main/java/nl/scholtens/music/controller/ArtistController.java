@@ -31,7 +31,7 @@ public class ArtistController {
 
         dto.setArtists(artistService.findAllArtists("", false));
         model.addObject("dto", dto);
-        model.setViewName("artistlist");
+        model.setViewName("/view/viewartistlist");
         return model;
     }
 
@@ -53,7 +53,7 @@ public class ArtistController {
 
         dto.setArtists(artistService.findAllArtists(item, ascDesc));
         model.addObject("dto", dto);
-        model.setViewName("artistlist");
+        model.setViewName("/view/viewartistlist");
         return model;
     }
 
@@ -97,7 +97,7 @@ public class ArtistController {
     public ModelAndView getSearchedArtists(@ModelAttribute ArtistDTO dto, ModelAndView model) {
         dto.setArtists(artistService.findArtistsByName(dto.getSearch()));
         model.addObject("dto", dto);
-        model.setViewName("artistlist");
+        model.setViewName("/view/viewartistlist");
         return model;
     }
 

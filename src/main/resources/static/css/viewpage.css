@@ -7,6 +7,9 @@
     border-collapse: collapse;
     padding: 5px;
     border-spacing: 5px;
+    text-align: left;
+    cursor: pointer;
+
 }
 
 th:hover {
@@ -25,4 +28,25 @@ th:hover {
     background-image: -ms-linear-gradient(top, #8FBC8F, #31573a);
     background-image: -o-linear-gradient(top, #8FBC8F, #31573a);
     background-image: linear-gradient(to bottom, #8FBC8F, #31573a);
+}
+
+
+.columnleft {
+}
+
+.colimage {
+    height: 40px;
+    width: 40px;
+    display: block;
+    margin-right: -20px;
+}
+
+.col380px {
+   height: auto;
+   width: 350px;
+}
+
+.col200px {
+    height: auto;
+    width: 200px;
 }

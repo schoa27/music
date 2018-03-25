@@ -8,8 +8,6 @@ h2 {
     font-size: xx-large;
 }
 
-
-
 h3 {
     text-align: center;
     margin: 10px;
@@ -29,12 +27,14 @@ h3 {
     border-spacing: 10px
 }
 
-.left108 {
-    margin-left: 33%;
-}
-
-.left375 {
-    margin-left: 375px;
+.imagetable {
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+    border-style: none;
+    padding: 0px;
+    border-spacing: 0px;
+    line-height: 10px;
 }
 
 .image {
@@ -42,28 +42,22 @@ h3 {
     height: 100%;
 }
 
-.smallimage {
-    width: 20%;
-    height: 20%;
+.image150 {
+    width: 150%;
+    height: 150%;
 }
 
-.columncenter {
-    text-align: center;
-    cursor: pointer;
+.link {
+    text-decoration: none;
+    color: white;
 }
 
-td.row {
-    border: darkseagreen solid 3px;
-    height: 30px;
+.link:hover {
+    text-decoration: underline;
+    color: black;
 }
 
-.rowimage {
-    border: darkseagreen solid 3px;
-    height: 30px;
-}
-
-tr.row {
-    border: darkseagreen solid 3px;
-    background-color: darkseagreen;
-    height: 40px;
+.link:visited {
+    text-decoration: underline;
+    color: black;
 }

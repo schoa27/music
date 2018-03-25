@@ -31,7 +31,7 @@ public class GroupsController {
 
         dto.setGroups(groupService.getAllGroups("", false));
         model.addObject("dto", dto);
-        model.setViewName("grouplist");
+        model.setViewName("/view/viewgrouplist");
         return model;
     }
 
@@ -54,7 +54,7 @@ public class GroupsController {
 
         dto.setGroups(groupService.getAllGroups(item, ascDesc));
         model.addObject("dto", dto);
-        model.setViewName("grouplist");
+        model.setViewName("/view/viewgrouplist");
 
         return model;
     }

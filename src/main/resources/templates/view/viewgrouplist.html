@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>groeplist</title>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/menu.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/page.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/viewpage.css}"/>
+</head>
+
+<script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
+
+<body>
+<table th:class="headtable">
+    <tbody>
+    <tr align="center">
+        <td>
+            <h2>Mijn Muziek Overzicht</h2>
+        </td>
+    </tr>
+    <tr>
+        <br/>
+    </tr>
+    </tbody>
+</table>
+
+<div th:include="menu"/>
+
+<table th:class="maintable">
+    <tbody>
+    <tr align="center">
+        <td>
+            <h3>Groep Overzicht</h3>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <fieldset>
+                <table th:class="listtable">
+                    <tbody>
+                    <tr th:class="backgroundth">
+                        <th th:class="colimage">&nbsp;</th>
+                        <th><a th:class="link" th:href="@{/groups/name}">Naam</a></th>
+                      </tr>
+
+                    <tr th:each="group, iterate: ${dto.groups}" style="cursor: pointer"
+                        th:onmouseover="'ChangeColor(this, true);'" th:onmouseout="'ChangeColor(this, false)'"
+                        th:onclick="'javascript:DetailGegevens(\'/detail/group/' + ${group.id} + '\');'" >
+
+                        <td th:class="colimage">
+                            <img th:src="@{/image/} + ${group.image}" th:class="image"/>
+                        </td>
+
+                        <td th:text="${group.name}"/>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>
