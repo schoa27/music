@@ -39,6 +39,7 @@
                 <table th:class="listtable">
                     <tbody>
                     <tr th:class="backgroundth">
+                        <th>&nbsp;</th>
                         <th><a th:href="@{/albums/title}">Album</a></th>
                         <th><a th:href="@{/albums/ag}">Uitvoeren</a></th>
                         <th><a th:href="@{/albums/releaseYear}">Release Datum</a></th>
@@ -49,6 +50,10 @@
                         th:onmouseover="'ChangeColor(this, true);'"
                         th:onmouseout="'ChangeColor(this, false)'"
                         th:onclick="'javascript:DetailGegevens(\'/detail/album/' + ${album.id} + '\');'">
+
+                        <td th:class="rowimage">
+                            <img th:src="@{/image/} + ${album.image}" th:class="smallimage"/>
+                        </td>
 
                         <td th:class="row" th:text="${album.title}" th:id="|td${iterstat.index}|"/>
                         <div th:if="${album.artist != null} and ${!album.collection} ">
