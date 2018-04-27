@@ -64,7 +64,7 @@ public class GroupsController {
         GroupDTO dto = new GroupDTO();
         dto.setGroup(groupService.findGroupById(id));
         model.addObject("dto", dto);
-        model.setViewName("groupdetails");
+        model.setViewName("/view/viewgroupdetails");
         return model;
     }
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>groupdetails</title>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/menu.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/page.css}"/>
+    <link rel="stylesheet" text="text/css" th:href="@{/css/viewpage.css}"/>
+</head>
+
+<script type="text/javascript" th:src="@{/js/viewFunctions.js}"/>
+
+<body>
+<table th:class="headtable">
+    <tbody>
+    <tr align="center">
+        <td>
+            <h2>Mijn Muziek Overzicht</h2>
+        </td>
+    </tr>
+    <tr>
+        <br/>
+    </tr>
+    </tbody>
+</table>
+
+<div th:include="menu"/>
+
+<table th:class="maintable">
+    <tbody>
+    <tr>
+        <td>
+            <h3>GroepDetails</h3>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <fieldset>
+                <table>
+                    <tr>
+                        <td>
+                            <table th:class="listtable">
+                                <tr>
+                                    <td>
+                                        <span th:text="${dto.group.name}"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <div th:if="${!dto.group.artists.empty}">
+                                <table th:class="listtable">
+                                    <tbody>
+                                    <th>Leden van de groep</th>
+                                    <tr th:each="artist, iterstat: ${dto.group.artists}"
+                                        th:onmouseover="'ChangeColor(this, true);'" th:onmouseout="'ChangeColor(this, false)'"
+                                        th:onclick="'javascript:DetailGegevens(\'/detail/artist/' + ${artist.id} + '\');'" >
+                                        <td th:text="${artist.name}"/>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>
