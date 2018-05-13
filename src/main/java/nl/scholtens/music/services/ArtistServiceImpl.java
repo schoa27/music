@@ -2,6 +2,7 @@ package nl.scholtens.music.services;
 
 import nl.scholtens.music.dataInteraction.ArtistDao;
 import nl.scholtens.music.dataInteraction.ArtistRepository;
+import nl.scholtens.music.dataTransferObjects.ArtistDTO;
 import nl.scholtens.music.domain.Album;
 import nl.scholtens.music.domain.Artist;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,15 +33,8 @@ public class ArtistServiceImpl implements ArtistService {
     }
 
     @Override
-    public List<Artist> findArtistsByName(String name) {
-        return repository.findAristsByNameContains(name);
-    }
-
-
-    @Override
-    public Artist findArtistByName(String name) {
-        Artist byName = repository.findByName(name);
-        return byName;
+    public List<Artist> findArtistsByName(ArtistDTO dto) {
+        return repository.findAristsByNameContains(dto.getSearch());
     }
 
     @Override
@@ -49,8 +43,8 @@ public class ArtistServiceImpl implements ArtistService {
     }
 
     @Override
-    public Artist saveArtist(Artist artist) {
-        return repository.save(artist);
+    public Artist saveArtist(ArtistDTO dto) {
+        return repository.save(dto.getArtist());
     }
 
     private List<Artist> getsortedList(String item, boolean ascDesc) {

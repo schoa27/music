@@ -1,16 +1,11 @@
 package nl.scholtens.music.domain;
 
-import com.google.common.collect.Multimap;
-import lombok.Data;
-
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
+
 
 @Entity
 @Table(name = "am_albums")
-@Data
 public class Album {
 
     @Id
@@ -37,32 +32,97 @@ public class Album {
     @Column(name = "am_collection")
     private boolean collection;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "sg_albums")
     private List<Song> songs;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "am_group")
     private Group group;
 
-    @OneToOne
-    @JoinColumn(name= "am_artist")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "am_artist")
     private Artist artist;
 
-    @Override
-    public String toString() {
-        return "Album{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", releaseYear='" + releaseYear + '\'' +
-                ", genre='" + genre + '\'' +
-                ", mediaType='" + mediaType + '\'' +
-                ", image='" + image + '\'' +
-                ", collection=" + collection +
-                ", songs=" + songs +
-                ", group=" + group +
-                ", artist=" + artist +
-                '}';
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getReleaseYear() {
+        return releaseYear;
+    }
+
+    public void setReleaseYear(String releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getMediaType() {
+        return mediaType;
+    }
+
+    public void setMediaType(String mediaType) {
+        this.mediaType = mediaType;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public boolean isCollection() {
+        return collection;
+    }
+
+    public void setCollection(boolean collection) {
+        this.collection = collection;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+
+    public Artist getArtist() {
+        return artist;
+    }
+
+    public void setArtist(Artist artist) {
+        this.artist = artist;
+    }
+
 }
 

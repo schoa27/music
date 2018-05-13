@@ -95,7 +95,7 @@ public class ArtistController {
      */
     @RequestMapping(value = "/search/artist", method = RequestMethod.POST)
     public ModelAndView getSearchedArtists(@ModelAttribute ArtistDTO dto, ModelAndView model) {
-        dto.setArtists(artistService.findArtistsByName(dto.getSearch()));
+        dto.setArtists(artistService.findArtistsByName(dto));
         model.addObject("dto", dto);
         model.setViewName("/view/viewartistlist");
         return model;
@@ -111,7 +111,7 @@ public class ArtistController {
 
     @RequestMapping(value = "/artist/add", method = RequestMethod.POST)
     public ModelAndView addArtist(@ModelAttribute ArtistDTO dto, ModelAndView model) {
-        artistService.saveArtist(dto.getArtist());
+        artistService.saveArtist(dto);
         model.setViewName("dummy");
         return model;
     }

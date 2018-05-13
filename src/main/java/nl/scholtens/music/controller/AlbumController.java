@@ -120,7 +120,7 @@ public class AlbumController {
      */
     @RequestMapping(value = "/search/album", method = RequestMethod.POST)
     public ModelAndView getSearchAlbums(@ModelAttribute AlbumDTO dto, ModelAndView model) {
-        dto.setAlbums(albumService.getAlbumsByName(dto.getSearch()));
+        dto.setAlbums(albumService.getAlbumsByName(dto));
         model.addObject("dto", dto);
         model.setViewName("albumlist");
         return model;
@@ -150,22 +150,7 @@ public class AlbumController {
 
     @RequestMapping(value = "/album/add", method = RequestMethod.POST)
     public ModelAndView addAlbum(@ModelAttribute AlbumDTO dto, ModelAndView model, HttpServletRequest request) {
-        if (dto.getAlbum().getArtist().getId() > 0 ) {
-            Artist artist = artistService.findArtistById(dto.getAlbum().getArtist().getId());
-            dto.getAlbum().setArtist(artist);
-        }
-        if (dto.getAlbum().getGroup().getId() > 0 ) {
-            Group group = groupService.findGroupById(dto.getAlbum().getGroup().getId());
-            dto.getAlbum().setGroup(group);
-        }
-
-
-        String[] titles = request.getParameterMap().get("title");
-        String[] duration = request.getParameterMap().get("duration");
-        String[] disks = request.getParameterMap().get("disk");
-
-        Arrays.stream(titles).forEach(s -> System.out.println(s));
-
+        albumService.saveAlbum(dto);
         model.addObject("dto", dto);
         model.setViewName("dummy");
         return model;

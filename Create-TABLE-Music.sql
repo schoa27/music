@@ -74,7 +74,7 @@ CREATE TABLE music.sg_songs
     sg_title character(50) COLLATE pg_catalog."default" NOT NULL,
     sg_duration character(10) COLLATE pg_catalog."default",
     sg_albums integer,
-    sg_disc integer NOT NULL,
+    sg_disc character(10) COLLATE pg_catalog."default",
     CONSTRAINT pk_sg_id PRIMARY KEY (sg_id)
 )
 WITH (

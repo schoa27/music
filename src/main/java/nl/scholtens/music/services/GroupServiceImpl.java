@@ -35,8 +35,8 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public List<Group> findGroupsByName(String name) {
-        return repository.findGroupByNameContains(name);
+    public List<Group> findGroupsByName(GroupDTO dto) {
+        return repository.findGroupByNameContains(dto.getSearch());
     }
 
     @Override

@@ -1,15 +1,12 @@
 package nl.scholtens.music.domain;
 
 
-import lombok.Data;
-
 import javax.persistence.*;
 import java.util.List;
 
 
 @Entity
 @Table(name = "sg_songs")
-@Data
 public class Song {
 
     @Id
@@ -25,7 +22,7 @@ public class Song {
     private String duration;
 
     @Column(name = "sg_disc")
-    private Integer discnr;
+    private String discnr;
 
     @ManyToMany
     @JoinTable(name = "at_sg",
@@ -45,12 +42,70 @@ public class Song {
                inverseJoinColumns = @JoinColumn(name = "am_id", referencedColumnName = "am_id"))
     private List<Album> albums;
 
-    @Override
-    public String toString() {
-        return "Song{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", duration='" + duration + '\'' +
-                '}';
+    public Song() {
+        super();
     }
+
+    public Song(String title, String duration, String disknr) {
+        this.title = title;
+        this.duration = duration;
+        this.discnr = disknr;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getDiscnr() {
+        return discnr;
+    }
+
+    public void setDiscnr(String discnr) {
+        this.discnr = discnr;
+    }
+
+    public List<Artist> getArtists() {
+        return artists;
+    }
+
+    public void setArtists(List<Artist> artists) {
+        this.artists = artists;
+    }
+
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
+    }
+
+    public List<Album> getAlbums() {
+        return albums;
+    }
+
+    public void setAlbums(List<Album> albums) {
+        this.albums = albums;
+    }
+
 }

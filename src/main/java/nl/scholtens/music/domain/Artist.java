@@ -1,6 +1,5 @@
 package nl.scholtens.music.domain;
 
-import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Iterator;
@@ -9,7 +8,6 @@ import java.util.Map;
 
 @Entity
 @Table(name = "at_artists")
-@Data
 public class Artist {
 
     @Id
@@ -45,6 +43,54 @@ public class Artist {
                inverseJoinColumns = @JoinColumn(name = "sg_id", referencedColumnName = "sg_id"))
     private List<Song> songs;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public List<Album> getAlbums() {
+        return albums;
+    }
+
+    public void setAlbums(List<Album> albums) {
+        this.albums = albums;
+    }
+
+    public Map<StartEndDate, Group> getStartEndDateByGroup() {
+        return startEndDateByGroup;
+    }
+
+    public void setStartEndDateByGroup(Map<StartEndDate, Group> startEndDateByGroup) {
+        this.startEndDateByGroup = startEndDateByGroup;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
+    }
+
     public void removeGroup(Group group) {
         Iterator iterator = startEndDateByGroup.entrySet().iterator();
         while (iterator.hasNext()) {
@@ -55,15 +101,5 @@ public class Artist {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Artist{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", image='" + image + '\'' +
-                ", albums=" + albums +
-                ", startEndDateByGroup=" + startEndDateByGroup +
-                ", songs=" + songs +
-                '}';
-    }
+
 }

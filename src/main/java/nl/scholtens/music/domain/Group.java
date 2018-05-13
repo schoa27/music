@@ -1,16 +1,11 @@
 package nl.scholtens.music.domain;
 
-
-import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "gp_groups")
-@Data
 public class Group {
 
     @Id
@@ -42,15 +37,52 @@ public class Group {
         artists = new ArrayList<>();
     }
 
-    @Override
-    public String toString() {
-        return "Group{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", image='" + image + '\'' +
-                ", albums=" + albums +
-                ", artists=" + artists +
-                ", songs=" + songs +
-                '}';
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public List<Album> getAlbums() {
+        return albums;
+    }
+
+    public void setAlbums(List<Album> albums) {
+        this.albums = albums;
+    }
+
+    public List<Artist> getArtists() {
+        return artists;
+    }
+
+    public void setArtists(List<Artist> artists) {
+        this.artists = artists;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
+    }
+
 }

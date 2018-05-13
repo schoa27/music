@@ -11,7 +11,7 @@ public interface GroupService {
 
     List<Group> getAllGroups(String item, boolean ascDesc);
 
-    List<Group> findGroupsByName(String name);
+    List<Group> findGroupsByName(GroupDTO dto);
 
     Group findGroupById(Integer id);
 

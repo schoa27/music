@@ -1,5 +1,6 @@
 package nl.scholtens.music.services;
 
+import nl.scholtens.music.dataTransferObjects.AlbumDTO;
 import nl.scholtens.music.domain.Album;
 import nl.scholtens.music.domain.Disk;
 
@@ -15,5 +16,7 @@ public interface AlbumService {
 
     List<Disk> setDisk(Album album);
 
-    List<Album> getAlbumsByName(String name);
+    List<Album> getAlbumsByName(AlbumDTO dto);
+
+    void saveAlbum(AlbumDTO dto);
 }

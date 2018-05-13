@@ -79,7 +79,7 @@ public class GroupsController {
 
     @RequestMapping(value = "/search/group", method = RequestMethod.POST)
     public ModelAndView getSearchedGroups(@ModelAttribute GroupDTO dto, ModelAndView model) {
-        dto.setGroups(groupService.findGroupsByName(dto.getSearch()));
+        dto.setGroups(groupService.findGroupsByName(dto));
         model.addObject("dto", dto);
         model.setViewName("grouplist");
         return model;
