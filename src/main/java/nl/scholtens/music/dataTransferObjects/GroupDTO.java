@@ -16,4 +16,8 @@ public class GroupDTO {
     private Group group;
 
     private String search;
+
+    private String[] startdate;
+
+    private String[] enddate;
 }

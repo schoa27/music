@@ -2,6 +2,7 @@ package nl.scholtens.music.services;
 
 import nl.scholtens.music.dataInteraction.GroupDao;
 import nl.scholtens.music.dataInteraction.GroupRepository;
+import nl.scholtens.music.dataTransferObjects.GroupDTO;
 import nl.scholtens.music.domain.Artist;
 import nl.scholtens.music.domain.Group;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class GroupServiceImpl implements GroupService {
@@ -43,8 +45,8 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public Group saveGroup(Group group) {
-        return repository.save(group);
+    public void saveGroup(GroupDTO dto) {
+       groupDao.saveGroup(dto.getGroup(), dto.getArtists(), dto.getStartdate(), dto.getEnddate());
     }
 
     private List<Group> getsortedList(String sorting, boolean ascDesc) {

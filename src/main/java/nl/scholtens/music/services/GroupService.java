@@ -1,6 +1,8 @@
 package nl.scholtens.music.services;
 
 
+import nl.scholtens.music.dataTransferObjects.GroupDTO;
+import nl.scholtens.music.domain.Artist;
 import nl.scholtens.music.domain.Group;
 
 import java.util.List;
@@ -13,5 +15,5 @@ public interface GroupService {
 
     Group findGroupById(Integer id);
 
-    Group saveGroup(Group group);
+    void saveGroup(GroupDTO dto);
 }

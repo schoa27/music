@@ -96,9 +96,7 @@ public class GroupsController {
 
     @RequestMapping(value = "/group/add", method = RequestMethod.POST)
     public ModelAndView addArtist(@ModelAttribute GroupDTO dto, ModelAndView model) {
-        dto.getGroup().setArtists(dto.getArtists());
-
-        Group group = groupService.saveGroup(dto.getGroup());
+        groupService.saveGroup(dto);
         model.setViewName("dummy");
         return model;
     }

@@ -27,8 +27,8 @@ CREATE TABLE music.gp_at
 (
     gp_id integer,
     at_id integer,
-    at_startdate date,
-    at_enddate date
+    at_startdate character(4) COLLATE pg_catalog."default",
+    at_enddate character(4) COLLATE pg_catalog."default"
 )
 WITH (
     OIDS = FALSE
