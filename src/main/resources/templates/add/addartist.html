@@ -27,6 +27,11 @@
 
 <div th:include="menu"/>
 
+<div th:if="${dto.message} == true" >
+    <div id="message"/>
+    <script>showMessage()</script>
+</div>
+
 <table th:class="maintable">
     <tbody>
     <tr>
@@ -74,8 +79,7 @@
                             </td>
                         </tr>
                     </table>
-
-                </form>
+                 </form>
             </fieldset>
         </td>
     </tr>

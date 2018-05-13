@@ -105,6 +105,7 @@ public class ArtistController {
     public ModelAndView addArtistInput(ModelAndView model) {
         ArtistDTO dto = new ArtistDTO();
         model.addObject("dto", dto);
+//        dto.setMessage(true);
         model.setViewName("/add/addartist");
         return model;
     }
@@ -112,7 +113,10 @@ public class ArtistController {
     @RequestMapping(value = "/artist/add", method = RequestMethod.POST)
     public ModelAndView addArtist(@ModelAttribute ArtistDTO dto, ModelAndView model) {
         artistService.saveArtist(dto);
-        model.setViewName("dummy");
+        dto = new ArtistDTO();
+        dto.setMessage(true);
+        model.addObject("dto", dto);
+        model.setViewName("/add/addartist");
         return model;
     }
 

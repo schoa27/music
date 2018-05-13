@@ -12,6 +12,8 @@ public class ArtistDTO {
 
     private String search;
 
+    private boolean message;
+
     public List<Artist> getArtists() {
         return artists;
     }
@@ -34,5 +36,13 @@ public class ArtistDTO {
 
     public void setSearch(String search) {
         this.search = search;
+    }
+
+    public boolean isMessage() {
+        return message;
+    }
+
+    public void setMessage(boolean message) {
+        this.message = message;
     }
 }

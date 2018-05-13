@@ -54,3 +54,11 @@ function enableselection() {
     document.getElementById('artist').disabled = false;
 
 }
+
+function showMessage() {
+    document.getElementById('message').innerHTML="Toegevoegd";
+    setTimeout(function(){
+        document.getElementById('message').style.display="none";
+    },3000);
+
+}
