@@ -46,7 +46,7 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public void saveGroup(GroupDTO dto) {
-       groupDao.saveGroup(dto.getGroup(), dto.getArtists(), dto.getStartdate(), dto.getEnddate());
+          groupDao.saveGroup(dto.getGroup(), dto.getArtists(), dto.getStartdate(), dto.getEnddate());
     }
 
     private List<Group> getsortedList(String sorting, boolean ascDesc) {

@@ -13,15 +13,16 @@
 
 <br/>
 
-<div th:if="${!dto.artist.groups.empty}">
+<div th:if="${!dto.artist.startEndDateByGroup.empty}">
     <table>
         <tbody>
-        <th>Lid van groep</th>
-        <tr th:each="group, iterstat: ${dto.artist.groups}" style="cursor: pointer"
+        <th>Lid van groep(en)</th>
+        <tr th:each="group, iterstat: ${dto.artist.startEndDateByGroup}" style="cursor: pointer"
             th:onmouseover="'ChangeColor(this, true);'" th:onmouseout="'ChangeColor(this, false)'"
-            th:onclick="'javascript:DetailGegevens(\'/detail/group/' + ${group.id} + '\');'" >
-
-            <td th:text="${group.name}"/>
+            th:onclick="'javascript:DetailGegevens(\'/detail/group/' + ${group.value.id} + '\');'">
+            <td th:text="${group.value.name}"/>
+            <td th:text="${group.key.startDate}"/>
+            <td th:text="${group.key.endDate}"/>
         </tr>
         </tbody>
     </table>

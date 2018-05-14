@@ -122,7 +122,7 @@ public class AlbumController {
     public ModelAndView getSearchAlbums(@ModelAttribute AlbumDTO dto, ModelAndView model) {
         dto.setAlbums(albumService.getAlbumsByName(dto));
         model.addObject("dto", dto);
-        model.setViewName("albumlist");
+        model.setViewName("/view/viewalbumlist");
         return model;
     }
 
