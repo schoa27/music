@@ -105,7 +105,6 @@ public class ArtistController {
     public ModelAndView addArtistInput(ModelAndView model) {
         ArtistDTO dto = new ArtistDTO();
         model.addObject("dto", dto);
-//        dto.setMessage(true);
         model.setViewName("/add/addartist");
         return model;
     }

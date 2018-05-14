@@ -1,6 +1,7 @@
 package nl.scholtens.music.controller;
 
 import nl.scholtens.music.dataTransferObjects.GroupDTO;
+import nl.scholtens.music.domain.Artist;
 import nl.scholtens.music.domain.Group;
 import nl.scholtens.music.services.ArtistService;
 import nl.scholtens.music.services.GroupService;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 public class GroupsController {
@@ -88,7 +90,8 @@ public class GroupsController {
     @RequestMapping(value = "/addgroup", method = RequestMethod.GET)
     public ModelAndView addArtistInput(ModelAndView model) {
         GroupDTO dto = new GroupDTO();
-        dto.setArtists(artistService.findAllArtists("", false));
+        dto.setArtists(getArtistList());
+        dto.setMessage(true);
         model.addObject("dto", dto);
         model.setViewName("/add/addgroup");
         return model;
@@ -97,12 +100,20 @@ public class GroupsController {
     @RequestMapping(value = "/group/add", method = RequestMethod.POST)
     public ModelAndView addArtist(@ModelAttribute GroupDTO dto, ModelAndView model) {
         groupService.saveGroup(dto);
-        model.setViewName("dummy");
+        dto = new GroupDTO();
+        dto.setArtists(getArtistList());
+        dto.setMessage(true);
+        model.addObject("dto", dto);
+        model.setViewName("/add/addgroup");
         return model;
     }
     
     private void initHttpSession(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.setAttribute("name", true);
+    }
+
+    private List<Artist> getArtistList() {
+        return artistService.findAllArtists("", false);
     }
 }

@@ -29,6 +29,8 @@ public class AlbumDTO {
 
     private String[] disk;
 
+    private boolean message;
+
     public boolean isList() {
         return list;
     }
@@ -123,5 +125,13 @@ public class AlbumDTO {
 
     public void setDisk(String[] disk) {
         this.disk = disk;
+    }
+
+    public boolean isMessage() {
+        return message;
+    }
+
+    public void setMessage(boolean message) {
+        this.message = message;
     }
 }

@@ -12,19 +12,9 @@
 </head>
 
 <body>
-<table th:class="headtable">
-    <tbody>
-    <tr align="center">
-        <td>
-            <h2>Mijn Muziek Overzicht</h2>
-        </td>
-    </tr>
-    <tr>
-        <br/>
-    </tr>
-    </tbody>
-</table>
 
+<div th:include="fragments/messagebox"/>
+<div th:include="fragments/title"/>
 <div th:include="menu"/>
 
 <table th:class="maintable">

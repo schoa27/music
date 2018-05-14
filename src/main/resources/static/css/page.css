@@ -13,6 +13,16 @@ h3 {
     margin: 10px;
 }
 
+.messagetable {
+    align-items: right;
+    width: 100%;
+    padding-right: 20px;
+    padding-top: 0px;
+    color: #f0b816;
+    font: bold 20px/30px arial, serif;
+;
+}
+
 .headtable {
     align-items: center;
     width: 100%;

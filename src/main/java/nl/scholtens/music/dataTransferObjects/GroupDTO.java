@@ -19,6 +19,8 @@ public class GroupDTO {
 
     private String[] enddate;
 
+    private boolean message;
+
     public List<Group> getGroups() {
         return groups;
     }
@@ -65,5 +67,13 @@ public class GroupDTO {
 
     public void setEnddate(String[] enddate) {
         this.enddate = enddate;
+    }
+
+    public boolean isMessage() {
+        return message;
+    }
+
+    public void setMessage(boolean message) {
+        this.message = message;
     }
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+<div th:fragment="messagebox">
+    <table th:class="messagetable">
+        <tbody>
+        <tr align="right">
+            <td>
+                <br/>
+            </td>
+            <td>
+                <div th:if="${dto.message} == true">
+                    <div id="message"/>
+                    <script>showMessage()</script>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
