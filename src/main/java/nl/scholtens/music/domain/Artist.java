@@ -32,7 +32,7 @@ public class Artist {
                 inverseJoinColumns = @JoinColumn(name = "gp_id", referencedColumnName = "gp_id"))
     @AttributeOverrides({
             @AttributeOverride(name = "startDate", column = @Column(name = "at_startdate")),
-            @AttributeOverride(name = "endDate", column = @Column(name = "at_rnddate"))
+            @AttributeOverride(name = "endDate", column = @Column(name = "at_enddate"))
     })
     private Map<StartEndDate, Group> startEndDateByGroup;
 

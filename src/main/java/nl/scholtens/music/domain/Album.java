@@ -32,8 +32,11 @@ public class Album {
     @Column(name = "am_collection")
     private boolean collection;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "sg_albums")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "am_sg",
+            joinColumns = @JoinColumn(name = "am_id", referencedColumnName = "am_id"),
+            inverseJoinColumns = @JoinColumn(name = "sg_id", referencedColumnName = "sg_id"))
+
     private List<Song> songs;
 
     @OneToOne(cascade = CascadeType.ALL)
