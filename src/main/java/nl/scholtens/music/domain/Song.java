@@ -2,6 +2,7 @@ package nl.scholtens.music.domain;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,13 +29,13 @@ public class Song {
     @JoinTable(name = "at_sg",
                joinColumns = @JoinColumn(name = "sg_id", referencedColumnName = "sg_id"),
                inverseJoinColumns = @JoinColumn(name = "at_id", referencedColumnName = "at_id"))
-    private List<Artist> artists;
+    private List<Artist> artists = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name ="gp_sg",
                joinColumns = @JoinColumn(name = "sg_id", referencedColumnName = "sg_id"),
                inverseJoinColumns = @JoinColumn(name = "gp_id", referencedColumnName = "gp_id"))
-    private List<Group> groups;
+    private List<Group> groups = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name = "am_sg",

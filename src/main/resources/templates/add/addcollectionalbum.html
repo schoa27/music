@@ -64,33 +64,21 @@
                                 <td>
                                     <input type="text" value="" maxlength="2" size="2" th:field="*{disk}"/>
                                 </td>
-
-                                <div style="display: block" th:id="button">
-                                    <td>
-                                        <input th:class="btn" th:type="button"
-                                               onclick="javascript:showhide('group' ,'artist');"
-                                               value="Artiest/Groep"/>
-                                    </td>
-                                    <td>
-                                        <div style="display:none" th:id="group">
-                                            <select class="btn select" name="groups">
-                                                <option value="0">Selecteer groep</option>
-                                                <option th:each="group : ${dto.groups}"
-                                                        th:value="${group.id}"
-                                                        th:text="${group.name}"></option>
+                                <td>
+                                    <input list="atgp" type="text" value="" maxlength="30" size="30"/>
+                                    <div th:id="group">
+                                        <datalist id="atgp"  >
+                                            <select name="atgp">
+                                            <option th:each="group : ${dto.groups}"
+                                                    th:value="${group.name}"
+                                                    th:text="${group.name}"
+                                                    th:selected="${atgp == group.name}"/>
                                             </select>
-                                        </div>
+                                        </datalist>
+                                    </div>
 
-                                        <div style="display:block" th:id="artist">
-                                            <select class="btn select" name="artists">
-                                                <option value="0">Selecteer artist</option>
-                                                <option th:each="artist : ${dto.artists}"
-                                                        th:value="${artist.id}"
-                                                        th:text="${artist.name}"></option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                </div>
+                                </td>
+
                                 <td>
                                     <button class="remove-row btn addbutton">Verwijderen</button>
                                 </td>

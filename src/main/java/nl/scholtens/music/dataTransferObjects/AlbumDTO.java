@@ -1,6 +1,8 @@
 package nl.scholtens.music.dataTransferObjects;
 
 import nl.scholtens.music.domain.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlbumDTO {
@@ -9,9 +11,9 @@ public class AlbumDTO {
 
     private List<Album> albums;
 
-    private List<Group> groups;
+    private List<Group> groups = new ArrayList<>();
 
-    private List<Artist> artists;
+    private List<Artist> artists = new ArrayList<>();
 
     private List<Disk> disks;
 
@@ -29,7 +31,11 @@ public class AlbumDTO {
 
     private String[] disk;
 
+    private String[] atgp;
+
     private boolean message;
+
+    private boolean collection;
 
     public boolean isList() {
         return list;
@@ -133,5 +139,21 @@ public class AlbumDTO {
 
     public void setMessage(boolean message) {
         this.message = message;
+    }
+
+    public boolean isCollection() {
+        return collection;
+    }
+
+    public void setCollection(boolean collection) {
+        this.collection = collection;
+    }
+
+    public String[] getAtgp() {
+        return atgp;
+    }
+
+    public void setAtgp(String[] atgp) {
+        this.atgp = atgp;
     }
 }

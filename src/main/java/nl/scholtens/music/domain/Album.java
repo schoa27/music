@@ -2,6 +2,7 @@ package nl.scholtens.music.domain;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Optional;
 
 
 @Entity
@@ -36,7 +37,8 @@ public class Album {
     @JoinTable(name = "am_sg",
             joinColumns = @JoinColumn(name = "am_id", referencedColumnName = "am_id"),
             inverseJoinColumns = @JoinColumn(name = "sg_id", referencedColumnName = "sg_id"))
-
+    @JoinColumns({@JoinColumn(name = "at_id", referencedColumnName = "at_id"),
+                  @JoinColumn(name = "gp_id", referencedColumnName = "gp_id")})
     private List<Song> songs;
 
     @OneToOne(cascade = CascadeType.ALL)
